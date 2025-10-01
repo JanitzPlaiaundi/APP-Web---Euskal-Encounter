@@ -1,0 +1,116 @@
+.eventosMain{
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    align-items: center;
+    }
+
+.zonaFiltros{
+    height: 10vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.zonaFiltros h2{
+    font-size: 1.4rem;
+    font-weight:100;
+}
+
+#zonaTarjetas{
+    min-height: 80vh;
+    width: 90vw;
+}
+
+.mainTarjetas{
+    border: 1px solid black;
+    padding-top: 5vh;
+    display: flex;
+    min-height: 90vh;
+    width: 90vw;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.tarjeta{
+    border: 2px solid black;
+    background-color: white;
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.divImagen{
+    height: 14vh;
+    width: 20vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 5%;
+}
+
+.nombreEvento{
+    width: fit-content;
+    color: black;
+    margin-right: 2%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.fechaEvento{
+    font-size: 1rem;
+    width: fit-content;
+    color: black;
+    margin-right: 2%;
+    background-color: white;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.divTarjetas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 6vh;
+    width: 20vw;
+}
+
+.textoTarjetas{
+    height: fit-content;
+    width: 10vw;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.btnTarjetas{
+    background-color: rgb(47, 47, 80);
+    border: 1px solid black;
+    height: fit-content;
+    padding-block: 10px;
+    width: 8vw;
+    font-size: 1rem;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.bntTarjetas:hover{
+    background-color: rgb(46, 46, 219);
+    border: 1px solid black;
+}
+
+
+select{
+    padding: 10px;
+}
