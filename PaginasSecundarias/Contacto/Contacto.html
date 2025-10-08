@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="icon" type="image/jpg" href="../../Recursos/Imagenes/Logo.jpg" />
+    <link rel="stylesheet" href="Contacto.css">
+    <link rel="stylesheet" href="../../Recursos/Css conjuntos/footer.css">
+    <link rel="stylesheet" href="../../Recursos/Css conjuntos/header.css">
+</head>
+<body>
+    <header>
+        <section class="sectionLogoHeader">
+            <img src="/Recursos/Imagenes/logoHeader.png" alt="Logo" class="logoHeader">
+        </section>
+        <nav class="headerEnlaces">
+            <a class="enlacesHeader" href="../../index.html">Inicio</a>
+            <a class="enlacesHeader" href="../Eventos/Eventos.html">Eventos</a>
+            <a class="enlacesHeader" href="../Participantes/Particitantes.html">Participantes</a>
+            <a class="enlacesHeader" href="../Calendario/Calendario.html">Calendario</a>
+            <a class="enlacesHeader" href="../Incripciones/Inscripciones.html">Inscripción</a>
+            <a class="enlacesHeader" href="#">Contacto</a>
+        </nav>
+        <section class="headerBotones">
+            <button class="botonInicioDeSesion botonesRegistro">Iniciar sesión</button>
+            <button class="botonRegistro botonesRegistro">Registrarse</button>
+        </section>
+    </header>
+
+    <div class="imagen-header">
+        <h1>CONTACTO</h1>
+        <p>Nos encantaría escuchar tus ideas y proyectos. ¡Hagamos algo increíble juntos!</p>
+    </div>
+
+    <div class="contenedor-principal">
+        <form class="formulario">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo *</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="empresa">Compañía/Organización</label>
+            <input type="text" id="empresa" name="empresa">
+
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="informacion-empresa">
+            <p><strong>Teléfono:</strong><br> +34 123 456 789</p>
+            <p><strong>Correo:</strong><br> info@miempresa.com</p>
+            <p><strong>Localización:</strong><br> Calle Falsa 123, Ciudad, País</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario</title>
+  <link rel="icon" type="image/jpg" href="../../Recursos/Imagenes/Logo.jpg" />
+  <link rel="stylesheet" href="Calendario.css">
+  <link rel="stylesheet" href="../../Recursos/Css conjuntos/footer.css">
+  <link rel="stylesheet" href="../../Recursos/Css conjuntos/header.css">
+  <script src="Calendario.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <section class="sectionLogoHeader">
+      <img src="/Recursos/Imagenes/logoHeader.png" alt="" class="logoHeader">
+    </section>
+    <nav class="headerEnlaces">
+      <a class="enlacesHeader" href="../../index.html">Inicio</a>
+      <a class="enlacesHeader" href="../Eventos/Eventos.html">Eventos</a>
+      <a class="enlacesHeader" href="../Participantes/Particitantes.html">Participantes</a>
+      <a class="enlacesHeader" href="#">Calendario</a>
+      <a class="enlacesHeader" href="../Incripciones/Inscripciones.html">Inscripción</a>
+      <a class="enlacesHeader" href="../Contacto/Contacto.html">Contacto</a>
+    </nav>
+    <section class="headerBotones">
+      <button class="botonInicioDeSesion botonesRegistro">Iniciar sesión</button>
+      <button class="botonRegistro botonesRegistro">Registrarse</button>
+    </section>
+  </header>
+
+  <main>
+    <div class="calendar-container">
+      <div class="month-header">
+        <button onclick="changeMonth(-1)">&#9664;</button>
+        <h2 id="month-year"></h2>
+        <button onclick="changeMonth(1)">&#9654;</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
