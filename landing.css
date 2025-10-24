@@ -1,26 +1,47 @@
 main{
     width: 100vw;
     height: 90vh;
+    display: flex;
+    position: relative;
 }
 
 .imagenHero{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
-.centrarBotonesHero{
-    width: 50vw;
+.centrarHero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+    width: 80vw;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+main h1{
+    color: white;
+    font-size: 5rem;
+}
+
+main h2{
+    color: white;
+    font-size: 3rem;
+}
+
+.centrarBotonesHero{
     display: flex;
     justify-content: center;
     gap: 3%;
+    margin-top: 5vh;
 }
-
 .botonesHero{
     width: 15vw;
     height: 7vh;
@@ -33,18 +54,19 @@ main{
 
 .botonInscribeteHero{
     color: white;
-    background-color: #1ac2e3;
-    border: 2px solid black;
+    background-color: purple;
+    border: 2px solid white;
 }
 
 .botonInscribeteHero:hover{
     background-color: #f9a146;
+    border: 2px solid purple;
 }
 
 .botonEventoHero{
-    color: black;
-    background-color: #0774bb;
-    border: 2px solid white;
+    color: purple;
+    background-color: white;
+    border: 2px solid purple;
 }
 
 .botonEventoHero:hover{
