@@ -30,8 +30,15 @@ header {
     margin: 15px 0 5px;
 }
 .formulario input {
-    width: auto;
-    padding: 12px 30vh;
+    width: 45%;
+    padding: 12px 20vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.formulario input[id="telefonoListadoPais"] {
+    width: 30%;
+    padding: 12px 20vh;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
@@ -49,4 +56,11 @@ header {
     font-size: 1rem;
     border-radius: 4px;
     cursor: pointer;
+}
+form select{
+    width: 45%;
+    padding: 12px 20vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
 }

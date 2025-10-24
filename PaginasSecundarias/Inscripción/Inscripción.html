@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Inscripción.css">
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/footer.css">
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/header.css">
+    <script src="Inscripción.js" defer></script>
 </head>
 <body>
     <header>
@@ -33,15 +34,15 @@
     </div>
     <div class="contenedor-principal">
         <form class="formulario">
-        <label for="nombre">Nombre *</label>
+            <label for="nombre">Nombre *</label>
             <input type="text" id="nombre" name="nombre" required>
 
             <label for="correo">Correo *</label>
             <input type="email" id="correo" name="correo" required>
 
             <label for="telefono">numero de telefono *</label>
-            <input type="number" id="telefono1" name="telefono" pattern="^\+?\d{9,15}$" required>
-            <input type="number" id="telefono2" name="telefono" inputmode="numeric"  maxlength="9" placeholder="+34123456789" required>
+           <select name="" id="Prefijo"></select>
+            <input type="number" id="telefono" name="telefono" inputmode="numeric"  maxlength="9" placeholder="123456789" required>
             <label for="evento">evento *</label>
             <select name="evento" id="evento">
                 <option value="0"></option>
