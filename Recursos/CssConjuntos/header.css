@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Bahnschrift';
     src: url('../Fuentes/BAHNSCHRIFT\ 10.TTF') format('truetype');
@@ -7,11 +9,13 @@
     font-family: 'Kanit';
     src: url('../Fuentes/Kanit-SemiBold.ttf') format('truetype');
 }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Kanit, 'Courier New', Courier, monospace;
+    
 }
 
 header{
