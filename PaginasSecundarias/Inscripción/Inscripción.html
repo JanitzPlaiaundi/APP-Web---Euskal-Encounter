@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.9.0/css/flag-icons.min.css">
     <link rel="icon" type="image/jpg" href="../../Recursos/Imagenes/Logo.jpg" />
     <link rel="stylesheet" href="Inscripción.css">
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/footer.css">
@@ -41,8 +42,10 @@
             <input type="email" id="correo" name="correo" required>
 
             <label for="telefono">numero de telefono *</label>
-           <select name="" id="Prefijo"></select>
+            <img id="ImagenPais" src="../../Recursos/Imagenes/Flags/af.png" alt="">
+            <select name="" id="Prefijo" onchange={actualizarBandera()}></select>
             <input type="number" id="telefono" name="telefono" inputmode="numeric"  maxlength="9" placeholder="123456789" required>
+
             <label for="evento">evento *</label>
             <select name="evento" id="evento">
                 <option value="0"></option>

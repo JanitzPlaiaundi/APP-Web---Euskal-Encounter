@@ -1,250 +1,264 @@
 const Select=document.getElementById("Prefijo");
-let callCodes=[
-    { numero: "+1", bandera: "🇺🇸🇨🇦" }, // Estados Unidos y Canadá
-    { numero: "+1-340", bandera: "🇻🇮" }, // Islas Vírgenes de los EE.UU.
-    { numero: "+1-670", bandera: "🇲🇵" }, // Islas Marianas del Norte
-    { numero: "+1-671", bandera: "🇬🇺" }, // Guam
-    { numero: "+1-684", bandera: "🇦🇸" }, // Samoa Americana
-    { numero: "+1-787", bandera: "🇵🇷" }, // Puerto Rico
-    { numero: "+1-939", bandera: "🇵🇷" }, // Puerto Rico
-    { numero: "+1-441", bandera: "🇧🇲" }, // Bermudas
-    { numero: "+299", bandera: "🇬🇱" }, // Groenlandia
-    { numero: "+508", bandera: "🇵🇲" }, // San Pedro y Miquelón
-    { numero: "+52", bandera: "🇲🇽" }, // México
-    { numero: "+1-242", bandera: "🇧🇸" }, // Bahamas
-    { numero: "+1-246", bandera: "🇧🇧" }, // Barbados
-    { numero: "+1-264", bandera: "🇦🇮" }, // Anguila
-    { numero: "+1-268", bandera: "🇦🇬" }, // Antigua y Barbuda
-    { numero: "+1-284", bandera: "🇻🇬" }, // Islas Vírgenes Británicas
-    { numero: "+1-345", bandera: "🇰🇾" }, // Islas Caimán
-    { numero: "+1-473", bandera: "🇬🇩" }, // Granada
-    { numero: "+1-649", bandera: "🇹🇨" }, // Islas Turcas y Caicos
-    { numero: "+1-664", bandera: "🇬🇩" }, // Montserrat
-    { numero: "+1-721", bandera: "🇸🇽" }, // San Martín
-    { numero: "+1-758", bandera: "🇱🇨" }, // Santa Lucía
-    { numero: "+1-767", bandera: "🇩🇲" }, // Dominica
-    { numero: "+1-784", bandera: "🇻🇨" }, // San Vicente y las Granadinas
-    { numero: "+1-809", bandera: "🇩🇴" }, // República Dominicana
-    { numero: "+1-829", bandera: "🇩🇴" }, // República Dominicana
-    { numero: "+1-849", bandera: "🇩🇴" }, // República Dominicana
-    { numero: "+1-868", bandera: "🇹🇹" }, // Trinidad y Tobago
-    { numero: "+1-869", bandera: "🇰🇳" }, // San Cristóbal y Nieves
-    { numero: "+1-876", bandera: "🇯🇲" }, // Jamaica
-    { numero: "+1-658", bandera: "🇯🇲" }, // Jamaica
-    { numero: "+297", bandera: "🇦🇼" }, // Aruba
-    { numero: "+509", bandera: "🇭🇹" }, // Haití
-    { numero: "+53", bandera: "🇨🇺" }, // Cuba
-    { numero: "+590", bandera: "🇬🇵" }, // Guadalupe
-    { numero: "+596", bandera: "🇲🇶" }, // Martinica
-    { numero: "+599", bandera: "🇨🇼" }, // Curazao
-    { numero: "+501", bandera: "🇧🇿" }, // Belice
-    { numero: "+502", bandera: "🇬🇹" }, // Guatemala
-    { numero: "+503", bandera: "🇸🇻" }, // El Salvador
-    { numero: "+504", bandera: "🇭🇳" }, // Honduras
-    { numero: "+505", bandera: "🇳🇮" }, // Nicaragua
-    { numero: "+506", bandera: "🇨🇷" }, // Costa Rica
-    { numero: "+507", bandera: "🇵🇦" }, // Panamá
-    { numero: "+500", bandera: "🇫🇰" }, // Islas Malvinas
-    { numero: "+51", bandera: "🇵🇪" }, // Perú
-    { numero: "+54", bandera: "🇦🇷" }, // Argentina
-    { numero: "+55", bandera: "🇧🇷" }, // Brasil
-    { numero: "+56", bandera: "🇨🇱" }, // Chile
-    { numero: "+57", bandera: "🇨🇴" }, // Colombia
-    { numero: "+58", bandera: "🇻🇪" }, // Venezuela
-    { numero: "+591", bandera: "🇧🇴" }, // Bolivia
-    { numero: "+592", bandera: "🇬🇾" }, // Guyana
-    { numero: "+593", bandera: "🇪🇨" }, // Ecuador
-    { numero: "+594", bandera: "🇬🇫" }, // Guayana Francesa
-    { numero: "+595", bandera: "🇵🇾" }, // Paraguay
-    { numero: "+597", bandera: "🇸🇷" }, // Surinam
-    { numero: "+598", bandera: "🇺🇾" }, // Uruguay
-    { numero: "+20", bandera: "🇪🇬" }, // Egipto
-    { numero: "+211", bandera: "🇸🇸" }, // Sudán del Sur
-    { numero: "+212", bandera: "🇲🇦" }, // Marruecos
-    { numero: "+213", bandera: "🇩🇿" }, // Argelia
-    { numero: "+214", bandera: "🇪🇭" }, // República Árabe Saharaui Democrática
-    { numero: "+216", bandera: "🇹🇳" }, // Túnez
-    { numero: "+218", bandera: "🇱🇾" }, // Libia
-    { numero: "+220", bandera: "🇬🇲" }, // Gambia
-    { numero: "+221", bandera: "🇸🇳" }, // Senegal
-    { numero: "+222", bandera: "🇲🇷" }, // Mauritania
-    { numero: "+223", bandera: "🇲🇱" }, // Malí
-    { numero: "+224", bandera: "🇬🇳" }, // Guinea
-    { numero: "+225", bandera: "🇨🇮" }, // Costa de Marfil
-    { numero: "+226", bandera: "🇧🇫" }, // Burkina Faso
-    { numero: "+227", bandera: "🇳🇪" }, // Níger
-    { numero: "+228", bandera: "🇹🇬" }, // Togo
-    { numero: "+229", bandera: "🇧🇯" }, // Benín
-    { numero: "+230", bandera: "🇲🇺" }, // Mauricio
-    { numero: "+231", bandera: "🇱🇷" }, // Liberia
-    { numero: "+232", bandera: "🇸🇱" }, // Sierra Leona
-    { numero: "+233", bandera: "🇬🇭" }, // Ghana
-    { numero: "+234", bandera: "🇳🇬" }, // Nigeria
-    { numero: "+235", bandera: "🇹🇩" }, // Chad
-    { numero: "+236", bandera: "🇨🇫" }, // República Centroafricana
-    { numero: "+237", bandera: "🇨🇲" }, // Camerún
-    { numero: "+238", bandera: "🇨🇻" }, // Cabo Verde
-    { numero: "+239", bandera: "🇸🇹" }, // Santo Tomé y Príncipe
-    { numero: "+240", bandera: "🇬🇶" }, // Guinea Ecuatorial
-    { numero: "+241", bandera: "🇬🇦" }, // Gabón
-    { numero: "+242", bandera: "🇨🇬" }, // República del Congo
-    { numero: "+243", bandera: "🇨🇩" }, // República Democrática del Congo
-    { numero: "+244", bandera: "🇦🇴" }, // Angola
-    { numero: "+245", bandera: "🇬🇼" }, // Guinea-Bisáu
-    { numero: "+246", bandera: "🇮🇴" }, // Territorio Británico del Océano Índico
-    { numero: "+247", bandera: "🇦🇸" }, // Isla Ascensión
-    { numero: "+248", bandera: "🇸🇨" }, // Seychelles
-    { numero: "+249", bandera: "🇸🇩" }, // Sudán
-    { numero: "+250", bandera: "🇷🇼" }, // Ruanda
-    { numero: "+251", bandera: "🇪🇹" }, // Etiopía
-    { numero: "+252", bandera: "🇸🇴" }, // Somalia
-    { numero: "+253", bandera: "🇩🇯" }, // Yibuti
-    { numero: "+254", bandera: "🇰🇪" }, // Kenia
-    { numero: "+255", bandera: "🇹🇿" }, // Tanzania
-    { numero: "+256", bandera: "🇺🇬" }, // Uganda
-    { numero: "+257", bandera: "🇧🇮" }, // Burundi
-    { numero: "+258", bandera: "🇲🇿" }, // Mozambique
-    { numero: "+260", bandera: "🇿🇲" }, // Zambia
-    { numero: "+261", bandera: "🇲🇬" }, // Madagascar
-    { numero: "+262", bandera: "🇷🇪🇾🇹" }, // Reunión y Mayotte
-    { numero: "+263", bandera: "🇿🇼" }, // Zimbabue
-    { numero: "+264", bandera: "🇳🇦" }, // Namibia
-    { numero: "+265", bandera: "🇲🇼" }, // Malaui
-    { numero: "+266", bandera: "🇱🇸" }, // Lesoto
-    { numero: "+267", bandera: "🇧🇼" }, // Botsuana
-    { numero: "+268", bandera: "🇸🇿" }, // Suazilandia
-    { numero: "+269", bandera: "🇰🇲" }, // Comoras
-    { numero: "+27", bandera: "🇿🇦" }, // Sudáfrica
-    { numero: "+290", bandera: "🇸🇭" }, // Santa Elena, Ascensión y Tristán de Acuña
-    { numero: "+291", bandera: "🇪🇷" }, // Eritrea
-    { numero: "+298", bandera: "🇫🇴" }, // Islas Feroe
-    { numero: "+30", bandera: "🇬🇷" }, // Grecia
-    { numero: "+31", bandera: "🇳🇱" }, // Países Bajos
-    { numero: "+32", bandera: "🇧🇪" }, // Bélgica
-    { numero: "+33", bandera: "🇫🇷" }, // Francia
-    { numero: "+34", bandera: "🇪🇸" }, // España
-    { numero: "+350", bandera: "🇬🇮" }, // Gibraltar
-    { numero: "+351", bandera: "🇵🇹" }, // Portugal
-    { numero: "+352", bandera: "🇱🇺" }, // Luxemburgo
-    { numero: "+353", bandera: "🇮🇪" }, // Irlanda
-    { numero: "+354", bandera: "🇮🇸" }, // Islandia
-    { numero: "+355", bandera: "🇦🇱" }, // Albania
-    { numero: "+356", bandera: "🇲🇹" }, // Malta
-    { numero: "+357", bandera: "🇨🇾" }, // Chipre
-    { numero: "+358", bandera: "🇫🇮" }, // Finlandia
-    { numero: "+359", bandera: "🇧🇬" }, // Bulgaria
-    { numero: "+36", bandera: "🇭🇺" }, // Hungría
-    { numero: "+370", bandera: "🇱🇹" }, // Lituania
-    { numero: "+371", bandera: "🇱🇻" }, // Letonia
-    { numero: "+372", bandera: "🇪🇪" }, // Estonia
-    { numero: "+373", bandera: "🇲🇩" }, // Moldavia
-    { numero: "+374", bandera: "🇦🇲" }, // Armenia
-    { numero: "+375", bandera: "🇧🇾" }, // Bielorrusia
-    { numero: "+376", bandera: "🇦🇩" }, // Andorra
-    { numero: "+377", bandera: "🇲🇨" }, // Mónaco
-    { numero: "+378", bandera: "🇸🇲" }, // San Marino
-    { numero: "+379", bandera: "🇻🇦" }, // Ciudad del Vaticano
-    { numero: "+380", bandera: "🇺🇦" }, // Ucrania
-    { numero: "+381", bandera: "🇷🇸" }, // Serbia
-    { numero: "+382", bandera: "🇲🇪" }, // Montenegro
-    { numero: "+383", bandera: "🇽🇰" }, // Kosovo
-    { numero: "+384", bandera: "" }, // no asignado
-    { numero: "+385", bandera: "🇭🇷" }, // Croacia
-    { numero: "+386", bandera: "🇸🇮" }, // Eslovenia
-    { numero: "+387", bandera: "🇧🇦" }, // Bosnia y Herzegovina
-    { numero: "+388", bandera: "" }, // EWSP
-    { numero: "+389", bandera: "🇲🇰" }, // Macedonia del Norte
-    { numero: "+39", bandera: "🇮🇹" }, // Italia
-    { numero: "+40", bandera: "🇷🇴" }, // Rumania
-    { numero: "+41", bandera: "🇨🇭" }, // Suiza
-    { numero: "+420", bandera: "🇨🇿" }, // República Checa
-    { numero: "+421", bandera: "🇸🇰" }, // Eslovaquia
-    { numero: "+423", bandera: "🇱🇮" }, // Liechtenstein
-    { numero: "+43", bandera: "🇦🇹" }, // Austria
-    { numero: "+44", bandera: "🇬🇧" }, // Reino Unido
-    { numero: "+45", bandera: "🇩🇰" }, // Dinamarca
-    { numero: "+46", bandera: "🇸🇪" }, // Suecia
-    { numero: "+47", bandera: "🇳🇴" }, // Noruega
-    { numero: "+48", bandera: "🇵🇱" }, // Polonia
-    { numero: "+49", bandera: "🇩🇪" }, // Alemania
-    { numero: "+7", bandera: "🇷🇺🇰🇿" }, // Rusia y Kazajistán
-    { numero: "+7-840", bandera: "🇦🇧" }, // Abjasia
-    { numero: "+7-940", bandera: "🇦🇧" }, // Abjasia
-    { numero: "+7-995", bandera: "🇸🇲" }, // Osetia del Sur
-    { numero: "+7-997", bandera: "🇸🇲" }, // Osetia del Sur
-    { numero: "+81", bandera: "🇯🇵" }, // Japón
-    { numero: "+82", bandera: "🇰🇷" }, // Corea del Sur
-    { numero: "+84", bandera: "🇻🇳" }, // Vietnam
-    { numero: "+850", bandera: "🇰🇵" }, // Corea del Norte
-    { numero: "+852", bandera: "🇭🇰" }, // Hong Kong
-    { numero: "+853", bandera: "🇲🇴" }, // Macao
-    { numero: "+855", bandera: "🇰🇭" }, // Camboya
-    { numero: "+856", bandera: "🇱🇦" }, // Laos
-    { numero: "+86", bandera: "🇨🇳" }, // China
-    { numero: "+880", bandera: "🇧🇩" }, // Bangladés
-    { numero: "+886", bandera: "🇹🇼" }, // Taiwán
-    { numero: "+90", bandera: "🇹🇷" }, // Turquía y Norte de Chipre
-    { numero: "+91", bandera: "🇮🇳" }, // India
-    { numero: "+92", bandera: "🇵🇰" }, // Pakistán
-    { numero: "+93", bandera: "🇦🇫" }, // Afganistán
-    { numero: "+94", bandera: "🇱🇰" }, // Sri Lanka
-    { numero: "+95", bandera: "🇲🇲" }, // Birmania
-    { numero: "+960", bandera: "🇲🇻" }, // Maldivas
-    { numero: "+961", bandera: "🇱🇧" }, // Líbano
-    { numero: "+962", bandera: "🇯🇴" }, // Jordania
-    { numero: "+963", bandera: "🇸🇾" }, // Siria
-    { numero: "+964", bandera: "🇮🇶" }, // Irak
-    { numero: "+965", bandera: "🇰🇼" }, // Kuwait
-    { numero: "+966", bandera: "🇸🇦" }, // Arabia Saudita
-    { numero: "+967", bandera: "🇾🇪" }, // Yemen
-    { numero: "+968", bandera: "🇴🇲" }, // Omán
-    { numero: "+970", bandera: "🇵🇸" }, // Palestina
-    { numero: "+971", bandera: "🇦🇪" }, // EAU
-    { numero: "+972", bandera: "🇮🇱" }, // Israel
-    { numero: "+973", bandera: "🇧🇭" }, // Baréin
-    { numero: "+974", bandera: "🇶🇦" }, // Catar
-    { numero: "+975", bandera: "🇧🇹" }, // Bután
-    { numero: "+976", bandera: "🇲🇳" }, // Mongolia
-    { numero: "+977", bandera: "🇳🇵" }, // Nepal
-    { numero: "+98", bandera: "🇮🇷" }, // Irán
-    { numero: "+992", bandera: "🇹🇯" }, // Tayikistán
-    { numero: "+993", bandera: "🇹🇲" }, // Turkmenistán
-    { numero: "+994", bandera: "🇦🇿" }, // Azerbaiyán
-    { numero: "+995", bandera: "🇬🇪" }, // Georgia
-    { numero: "+996", bandera: "🇰🇬" }, // Kirguistán
-    { numero: "+998", bandera: "🇺🇿" }, // Uzbekistán
-    { numero: "+60", bandera: "🇲🇾" }, // Malasia
-    { numero: "+61", bandera: "🇦🇺" }, // Australia
-    { numero: "+62", bandera: "🇮🇩" }, // Indonesia
-    { numero: "+63", bandera: "🇵🇭" }, // Filipinas
-    { numero: "+64", bandera: "🇳🇿" }, // Nueva Zelanda
-    { numero: "+65", bandera: "🇸🇬" }, // Singapur
-    { numero: "+66", bandera: "🇹🇭" }, // Tailandia
-    { numero: "+670", bandera: "🇹🇱" }, // Timor Oriental
-    { numero: "+672", bandera: "🇳🇫" }, // Isla Norfolk
-    { numero: "+673", bandera: "🇧🇳" }, // Brunéi
-    { numero: "+674", bandera: "🇳🇷" }, // Nauru
-    { numero: "+675", bandera: "🇵🇬" }, // Papúa Nueva Guinea
-    { numero: "+676", bandera: "🇹🇴" }, // Tonga
-    { numero: "+677", bandera: "🇸🇧" }, // Islas Salomón
-    { numero: "+678", bandera: "🇻🇺" }, // Vanuatu
-    { numero: "+679", bandera: "🇫🇯" }, // Fiyi
-    { numero: "+680", bandera: "🇵🇼" }, // Palaos
-    { numero: "+681", bandera: "🇼🇫" }, // Wallis y Futuna
-    { numero: "+682", bandera: "🇨🇰" }, // Islas Cook
-    { numero: "+683", bandera: "🇳🇺" }, // Niue
-    { numero: "+685", bandera: "🇼🇸" }, // Samoa
-    { numero: "+686", bandera: "🇰🇮" }, // Kiribati
-    { numero: "+687", bandera: "🇳🇨" }, // Nueva Caledonia
-    { numero: "+688", bandera: "🇹🇻" }, // Tuvalu
-    { numero: "+689", bandera: "🇵🇫" }, // Polinesia Francesa
-    { numero: "+690", bandera: "🇹🇰" }, // Tokelau
-    { numero: "+691", bandera: "🇫🇲" }, // Estados Federados de Micronesia
-    { numero: "+692", bandera: "🇲🇭" }  // Islas Marshall
+const paises = [
+  { numero: "+93", clase: "../../Recursos/Imagenes/Flags/afganistan.png" },   // Afganistán
+  { numero: "+355", clase: "../../Recursos/Imagenes/Flags/al.png" },  // Albania
+  { numero: "+213", clase: "../../Recursos/Imagenes/Flags/argelia.png" },  // Argelia
+  { numero: "+1‑684", clase: "../../Recursos/Imagenes/Flags/ar.webp" },// Samoa Americana
+  { numero: "+376", clase: "../../Recursos/Imagenes/Flags/ar.webp" },  // Andorra
+  { numero: "+244", clase: "../../Recursos/Imagenes/Flags/ar.webp" },  // Angola
+  { numero: "+1‑264", clase: "../../Recursos/Imagenes/Flags/ar.webp" },// Anguila
+  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/ar.webp" },  // Antártica
+  { numero: "+1‑268", clase: "../../Recursos/Imagenes/Flags/ar.webp" },// Antigua y Barbuda
+  { numero: "+54", clase: "../../Recursos/Imagenes/Flags/ar.webp" },   // Argentina
+  { numero: "+374", clase: "flag-icon flag-icon-am" },  // Armenia
+  { numero: "+297", clase: "flag-icon flag-icon-aw" },  // Aruba
+  { numero: "+61", clase: "flag-icon flag-icon-au" },   // Australia
+  { numero: "+43", clase: "flag-icon flag-icon-at" },   // Austria
+  { numero: "+994", clase: "flag-icon flag-icon-az" },  // Azerbaiyán
+  { numero: "+1‑242", clase: "flag-icon flag-icon-bs" },// Bahamas
+  { numero: "+973", clase: "flag-icon flag-icon-bh" },  // Baréin
+  { numero: "+880", clase: "flag-icon flag-icon-bd" },  // Bangladés
+  { numero: "+1‑246", clase: "flag-icon flag-icon-bb" },// Barbados
+  { numero: "+375", clase: "flag-icon flag-icon-by" },  // Bielorrusia
+  { numero: "+32", clase: "flag-icon flag-icon-be" },   // Bélgica
+  { numero: "+501", clase: "flag-icon flag-icon-bz" },  // Belice
+  { numero: "+229", clase: "flag-icon flag-icon-bj" },  // Benín
+  { numero: "+1‑441", clase: "flag-icon flag-icon-bm" },// Bermudas
+  { numero: "+975", clase: "flag-icon flag-icon-bt" },  // Bután
+  { numero: "+591", clase: "flag-icon flag-icon-bo" },  // Bolivia
+  { numero: "+387", clase: "flag-icon flag-icon-ba" },  // Bosnia y Herzegovina
+  { numero: "+267", clase: "flag-icon flag-icon-bw" },  // Botsuana
+  { numero: "+47", clase: "flag-icon flag-icon-bv" },   // Isla Bouvet
+  { numero: "+55", clase: "flag-icon flag-icon-br" },   // Brasil
+  { numero: "+246", clase: "flag-icon flag-icon-io" },  // Territorio Británico del Océano Índico
+  { numero: "+673", clase: "flag-icon flag-icon-bn" },  // Brunéi
+  { numero: "+359", clase: "flag-icon flag-icon-bg" },  // Bulgaria
+  { numero: "+226", clase: "flag-icon flag-icon-bf" },  // Burkina Faso
+  { numero: "+257", clase: "flag-icon flag-icon-bi" },  // Burundi
+  { numero: "+855", clase: "flag-icon flag-icon-kh" },  // Camboya
+  { numero: "+237", clase: "flag-icon flag-icon-cm" },  // Camerún
+  { numero: "+1", clase: "flag-icon flag-icon-ca" },    // Canadá
+  { numero: "+238", clase: "flag-icon flag-icon-cv" },  // Cabo Verde
+  { numero: "+345", clase: "flag-icon flag-icon-ky" }, // Islas Caimán
+  { numero: "+236", clase: "flag-icon flag-icon-cf" },  // República Centroafricana
+  { numero: "+235", clase: "flag-icon flag-icon-td" },  // Chad
+  { numero: "+56", clase: "flag-icon flag-icon-cl" },   // Chile
+  { numero: "+86", clase: "flag-icon flag-icon-cn" },   // China
+  { numero: "+61", clase: "flag-icon flag-icon-cx" },   // Isla Christmas
+  { numero: "+61", clase: "flag-icon flag-icon-cc" },   // Islas Cocos (Keeling)
+  { numero: "+57", clase: "flag-icon flag-icon-co" },   // Colombia
+  { numero: "+269", clase: "flag-icon flag-icon-km" },  // Comoras
+  { numero: "+242", clase: "flag-icon flag-icon-cg" },  // Congo
+  { numero: "+243", clase: "flag-icon flag-icon-cd" },  // República Democrática del Congo
+  { numero: "+672", clase: "flag-icon flag-icon-ck" },  // Islas Cook
+  { numero: "+506", clase: "flag-icon flag-icon-cr" },  // Costa Rica
+  { numero: "+225", clase: "flag-icon flag-icon-ci" },  // Costa de Marfil
+  { numero: "+385", clase: "flag-icon flag-icon-hr" },  // Croacia
+  { numero: "+53", clase: "flag-icon flag-icon-cu" },  // Cuba
+  { numero: "+537", clase: "flag-icon flag-icon-cw" },  // Curazao
+  { numero: "+357", clase: "flag-icon flag-icon-cy" },  // Chipre
+  { numero: "+420", clase: "flag-icon flag-icon-cz" },  // República Checa
+  { numero: "+45", clase: "flag-icon flag-icon-dk" },   // Dinamarca
+  { numero: "+253", clase: "flag-icon flag-icon-dj" },  // Yibuti
+  { numero: "+1‑767", clase: "flag-icon flag-icon-dm" },// Dominica
+  { numero: "+1‑849", clase: "flag-icon flag-icon-do" },// República Dominicana
+  { numero: "+593", clase: "flag-icon flag-icon-ec" },  // Ecuador
+  { numero: "+20", clase: "flag-icon flag-icon-eg" },   // Egipto
+  { numero: "+503", clase: "flag-icon flag-icon-sv" },  // El Salvador
+  { numero: "+240", clase: "flag-icon flag-icon-gq" },  // Guinea Ecuatorial
+  { numero: "+291", clase: "flag-icon flag-icon-er" },  // Eritrea
+  { numero: "+372", clase: "flag-icon flag-icon-ee" },  // Estonia
+  { numero: "+251", clase: "flag-icon flag-icon-et" },  // Etiopía
+  { numero: "+500", clase: "flag-icon flag-icon-fk" },  // Islas Malvinas
+  { numero: "+298", clase: "flag-icon flag-icon-fo" },  // Islas Feroe
+  { numero: "+679", clase: "flag-icon flag-icon-fj" },  // Fiyi
+  { numero: "+358", clase: "flag-icon flag-icon-fi" },  // Finlandia
+  { numero: "+33", clase: "flag-icon flag-icon-fr" },   // Francia
+  { numero: "+594", clase: "flag-icon flag-icon-gf" },  // Guayana Francesa
+  { numero: "+689", clase: "flag-icon flag-icon-pf" },  // Polinesia Francesa
+  { numero: "+241", clase: "flag-icon flag-icon-ga" },  // Gabón
+  { numero: "+220", clase: "flag-icon flag-icon-gm" },  // Gambia
+  { numero: "+995", clase: "flag-icon flag-icon-ge" },  // Georgia
+  { numero: "+49", clase: "flag-icon flag-icon-de" },   // Alemania
+  { numero: "+233", clase: "flag-icon flag-icon-gh" },  // Ghana
+  { numero: "+350", clase: "flag-icon flag-icon-gi" },  // Gibraltar
+  { numero: "+30", clase: "flag-icon flag-icon-gr" },   // Grecia
+  { numero: "+299", clase: "flag-icon flag-icon-gl" },  // Groenlandia
+  { numero: "+1‑473", clase: "flag-icon flag-icon-gd" },// Granada
+  { numero: "+590", clase: "flag-icon flag-icon-gp" },  // Guadalupe
+  { numero: "+1‑671", clase: "flag-icon flag-icon-gu" },// Guam
+  { numero: "+502", clase: "flag-icon flag-icon-gt" },  // Guatemala
+  { numero: "+44‑1481", clase: "flag-icon flag-icon-gg" },// Guernesey
+  { numero: "+224", clase: "flag-icon flag-icon-gn" },  // Guinea
+  { numero: "+245", clase: "flag-icon flag-icon-gw" },  // Guinea-Bisáu
+  { numero: "+595", clase: "flag-icon flag-icon-gy" },  // Guyana
+  { numero: "+509", clase: "flag-icon flag-icon-ht" },  // Haití
+  { numero: "+504", clase: "flag-icon flag-icon-hn" },  // Honduras
+  { numero: "+852", clase: "flag-icon flag-icon-hk" },  // Hong Kong
+  { numero: "+36", clase: "flag-icon flag-icon-hu" },   // Hungría
+  { numero: "+354", clase: "flag-icon flag-icon-is" },  // Islandia
+  { numero: "+91", clase: "flag-icon flag-icon-in" },   // India
+  { numero: "+62", clase: "flag-icon flag-icon-id" },   // Indonesia
+  { numero: "+98", clase: "flag-icon flag-icon-ir" },   // Irán
+  { numero: "+964", clase: "flag-icon flag-icon-iq" },  // Irak
+  { numero: "+353", clase: "flag-icon flag-icon-ie" },  // Irlanda
+  { numero: "+44", clase: "flag-icon flag-icon-im" },  // Isla de Man
+  { numero: "+972", clase: "flag-icon flag-icon-il" }, // Israel
+  { numero: "+39", clase: "flag-icon flag-icon-it" },  // Italia
+  { numero: "+1‑876", clase: "flag-icon flag-icon-jm" },// Jamaica
+  { numero: "+81", clase: "flag-icon flag-icon-jp" },  // Japón
+  { numero: "+44‑1534", clase: "flag-icon flag-icon-je" },// Jersey
+  { numero: "+962", clase: "flag-icon flag-icon-jo" }, // Jordania
+  { numero: "+7", clase: "flag-icon flag-icon-kz" },   // Kazajistán
+  { numero: "+254", clase: "flag-icon flag-icon-ke" }, // Kenia
+  { numero: "+686", clase: "flag-icon flag-icon-ki" }, // Kiribati
+  { numero: "+383", clase: "flag-icon flag-icon-xk" }, // Kosovo (uso no oficial, “xk” en algunos sistemas)
+  { numero: "+965", clase: "flag-icon flag-icon-kw" }, // Kuwait
+  { numero: "+996", clase: "flag-icon flag-icon-kg" }, // Kirguistán
+  { numero: "+856", clase: "flag-icon flag-icon-la" }, // Laos
+  { numero: "+371", clase: "flag-icon flag-icon-lv" }, // Letonia
+  { numero: "+961", clase: "flag-icon flag-icon-lb" }, // Líbano
+  { numero: "+266", clase: "flag-icon flag-icon-ls" }, // Lesoto
+  { numero: "+231", clase: "flag-icon flag-icon-lr" }, // Liberia
+  { numero: "+218", clase: "flag-icon flag-icon-ly" }, // Libia
+  { numero: "+423", clase: "flag-icon flag-icon-li" }, // Liechtenstein
+  { numero: "+370", clase: "flag-icon flag-icon-lt" }, // Lituania
+  { numero: "+352", clase: "flag-icon flag-icon-lu" }, // Luxemburgo
+  { numero: "+853", clase: "flag-icon flag-icon-mo" }, // Macao
+  { numero: "+389", clase: "flag-icon flag-icon-mk" }, // Macedonia del Norte
+  { numero: "+261", clase: "flag-icon flag-icon-mg" }, // Madagascar
+  { numero: "+265", clase: "flag-icon flag-icon-mw" }, // Malaui
+  { numero: "+60", clase: "flag-icon flag-icon-my" },  // Malasia
+  { numero: "+960", clase: "flag-icon flag-icon-mv" }, // Maldivas
+  { numero: "+223", clase: "flag-icon flag-icon-ml" }, // Malí
+  { numero: "+356", clase: "flag-icon flag-icon-mt" }, // Malta
+  { numero: "+692", clase: "flag-icon flag-icon-mh" }, // Islas Marshall
+  { numero: "+596", clase: "flag-icon flag-icon-mq" }, // Martinica
+  { numero: "+222", clase: "flag-icon flag-icon-mr" }, // Mauritania
+  { numero: "+230", clase: "flag-icon flag-icon-mu" }, // Mauricio
+  { numero: "+262", clase: "flag-icon flag-icon-yt" }, // Mayotte
+  { numero: "+52", clase: "flag-icon flag-icon-mx" },  // México
+  { numero: "+691", clase: "flag-icon flag-icon-fm" }, // Micronesia
+  { numero: "+373", clase: "flag-icon flag-icon-md" }, // Moldavia
+  { numero: "+377", clase: "flag-icon flag-icon-mc" }, // Mónaco
+  { numero: "+976", clase: "flag-icon flag-icon-mn" }, // Mongolia
+  { numero: "+382", clase: "flag-icon flag-icon-me" }, // Montenegro
+  { numero: "+1664", clase: "flag-icon flag-icon-ms" },// Montserrat
+  { numero: "+212", clase: "flag-icon flag-icon-ma" }, // Marruecos
+  { numero: "+258", clase: "flag-icon flag-icon-mz" }, // Mozambique
+  { numero: "+95", clase: "flag-icon flag-icon-mm" },  // Birmania (Myanmar)
+  { numero: "+264", clase: "flag-icon flag-icon-na" }, // Namibia
+  { numero: "+674", clase: "flag-icon flag-icon-nr" }, // Nauru
+  { numero: "+977", clase: "flag-icon flag-icon-np" }, // Nepal
+  { numero: "+31", clase: "flag-icon flag-icon-nl" },  // Países Bajos
+  { numero: "+687", clase: "flag-icon flag-icon-nc" }, // Nueva Caledonia
+  { numero: "+64", clase: "flag-icon flag-icon-nz" },  // Nueva Zelanda
+  { numero: "+505", clase: "flag-icon flag-icon-ni" }, // Nicaragua
+  { numero: "+227", clase: "flag-icon flag-icon-ne" }, // Níger
+  { numero: "+234", clase: "flag-icon flag-icon-ng" }, // Nigeria
+  { numero: "+683", clase: "flag-icon flag-icon-nu" }, // Niue
+  { numero: "+672", clase: "flag-icon flag-icon-nf" }, // Isla Norfolk
+  { numero: "+850", clase: "flag-icon flag-icon-kp" }, // Corea del Norte
+  { numero: "+1‑670", clase: "flag-icon flag-icon-mp" },// Islas Marianas del Norte
+  { numero: "+47", clase: "flag-icon flag-icon-no" },  // Noruega
+  { numero: "+968", clase: "flag-icon flag-icon-om" }, // Omán
+  { numero: "+92", clase: "flag-icon flag-icon-pk" },  // Pakistán
+  { numero: "+680", clase: "flag-icon flag-icon-pw" }, // Palaos
+  { numero: "+970", clase: "flag-icon flag-icon-ps" }, // Palestina
+  { numero: "+507", clase: "flag-icon flag-icon-pa" }, // Panamá
+  { numero: "+675", clase: "flag-icon flag-icon-pg" }, // Papúa Nueva Guinea
+  { numero: "+595", clase: "flag-icon flag-icon-py" }, // Paraguay
+  { numero: "+51", clase: "flag-icon flag-icon-pe" },  // Perú
+  { numero: "+63", clase: "flag-icon flag-icon-ph" },  // Filipinas
+  { numero: "+48", clase: "flag-icon flag-icon-pl" },  // Polonia
+  { numero: "+351", clase: "flag-icon flag-icon-pt" }, // Portugal
+  { numero: "+1‑787", clase: "flag-icon flag-icon-pr" },// Puerto Rico
+  { numero: "+974", clase: "flag-icon flag-icon-qa" }, // Catar
+  { numero: "+262", clase: "flag-icon flag-icon-re" }, // Reunión
+  { numero: "+40", clase: "flag-icon flag-icon-ro" },  // Rumanía
+  { numero: "+7", clase: "flag-icon flag-icon-ru" },   // Rusia
+  { numero: "+250", clase: "flag-icon flag-icon-rw" }, // Ruanda
+  { numero: "+590", clase: "flag-icon flag-icon-bl" }, // San Bartolomé
+  { numero: "+290", clase: "flag-icon flag-icon-sh" }, // Santa Elena
+  { numero: "+1‑869", clase: "flag-icon flag-icon-kn" },// San Cristóbal y Nieves
+  { numero: "+1‑758", clase: "flag-icon flag-icon-lc" },// Santa Lucía
+  { numero: "+1‑784", clase: "flag-icon flag-icon-vc" },// San Vicente y Granadinas
+  { numero: "+685", clase: "flag-icon flag-icon-ws" }, // Samoa
+  { numero: "+378", clase: "flag-icon flag-icon-sm" }, // San Marino
+  { numero: "+239", clase: "flag-icon flag-icon-st" }, // Santo Tomé y Príncipe
+  { numero: "+966", clase: "flag-icon flag-icon-sa" }, // Arabia Saudí
+  { numero: "+221", clase: "flag-icon flag-icon-sn" }, // Senegal
+  { numero: "+381", clase: "flag-icon flag-icon-rs" }, // Serbia
+  { numero: "+248", clase: "flag-icon flag-icon-sc" }, // Seychelles
+  { numero: "+232", clase: "flag-icon flag-icon-sl" }, // Sierra Leona
+  { numero: "+65", clase: "flag-icon flag-icon-sg" },  // Singapur
+  { numero: "+1‑721", clase: "flag-icon flag-icon-sx" },// Sint Maarten
+  { numero: "+421", clase: "flag-icon flag-icon-sk" }, // Eslovaquia
+  { numero: "+386", clase: "flag-icon flag-icon-si" }, // Eslovenia
+  { numero: "+677", clase: "flag-icon flag-icon-sb" }, // Islas Salomón
+  { numero: "+252", clase: "flag-icon flag-icon-so" }, // Somalia
+  { numero: "+27", clase: "flag-icon flag-icon-za" },  // Sudáfrica
+  { numero: "+500", clase: "flag-icon flag-icon-gs" }, // Georgia del Sur e Islas Sandwich del Sur
+  { numero: "+211", clase: "flag-icon flag-icon-ss" }, // Sudán del Sur
+  { numero: "+34", clase: "flag-icon flag-icon-es" },  // España
+  { numero: "+94", clase: "flag-icon flag-icon-lk" },  // Sri Lanka
+  { numero: "+249", clase: "flag-icon flag-icon-sd" }, // Sudán
+  { numero: "+597", clase: "flag-icon flag-icon-sr" }, // Surinam
+  { numero: "+47", clase: "flag-icon flag-icon-sj" },  // Svalbard y Jan Mayen
+  { numero: "+46", clase: "flag-icon flag-icon-se" },  // Suecia
+  { numero: "+41", clase: "flag-icon flag-icon-ch" },  // Suiza
+  { numero: "+963", clase: "flag-icon flag-icon-sy" }, // Siria
+  { numero: "+886", clase: "flag-icon flag-icon-tw" }, // Taiwán
+  { numero: "+992", clase: "flag-icon flag-icon-tj" }, // Tayikistán
+  { numero: "+255", clase: "flag-icon flag-icon-tz" }, // Tanzania
+  { numero: "+66", clase: "flag-icon flag-icon-th" },  // Tailandia
+  { numero: "+670", clase: "flag-icon flag-icon-tl" }, // Timor Oriental
+  { numero: "+228", clase: "flag-icon flag-icon-tg" }, // Togo
+  { numero: "+690", clase: "flag-icon flag-icon-tk" }, // Tokelau
+  { numero: "+676", clase: "flag-icon flag-icon-to" }, // Tonga
+  { numero: "+1‑868", clase: "flag-icon flag-icon-tt" },// Trinidad y Tobago
+  { numero: "+216", clase: "flag-icon flag-icon-tn" }, // Túnez
+  { numero: "+90", clase: "flag-icon flag-icon-tr" },  // Turquía
+  { numero: "+993", clase: "flag-icon flag-icon-tm" }, // Turkmenistán
+  { numero: "+1‑649", clase: "flag-icon flag-icon-tc" },// Islas Turcas y Caicos
+  { numero: "+688", clase: "flag-icon flag-icon-tv" }, // Tuvalu
+  { numero: "+1‑340", clase: "flag-icon flag-icon-vi" },// Islas Vírgenes (EE. UU.)
+  { numero: "+256", clase: "flag-icon flag-icon-ug" }, // Uganda
+  { numero: "+380", clase: "flag-icon flag-icon-ua" }, // Ucrania
+  { numero: "+971", clase: "flag-icon flag-icon-ae" }, // Emiratos Árabes Unidos
+  { numero: "+44‑20", clase: "flag-icon flag-icon-gb" },// Reino Unido (Gran Bretaña)
+  { numero: "+1‑284", clase: "flag-icon flag-icon-vg" },// Islas Vírgenes Británicas
+  { numero: "+1‑758", clase: "flag-icon flag-icon-vi" },// Islas Vírgenes de EE.UU.
+  { numero: "+598", clase: "flag-icon flag-icon-uy" }, // Uruguay
+  { numero: "+998", clase: "flag-icon flag-icon-uz" }, // Uzbekistán
+  { numero: "+678", clase: "flag-icon flag-icon-vu" }, // Vanuatu
+  { numero: "+379", clase: "flag-icon flag-icon-va" }, // Ciudad del Vaticano
+  { numero: "+58", clase: "flag-icon flag-icon-ve" },  // Venezuela
+  { numero: "+84", clase: "flag-icon flag-icon-vn" },  // Vietnam
+  { numero: "+681", clase: "flag-icon flag-icon-wf" }, // Wallis y Futuna
+  { numero: "+212", clase: "flag-icon flag-icon-eh" }, // Sáhara Occidental
+  { numero: "+967", clase: "flag-icon flag-icon-ye" }, // Yemen
+  { numero: "+260", clase: "flag-icon flag-icon-zm" }, // Zambia
+  { numero: "+263", clase: "flag-icon flag-icon-zw" }  // Zimbabue
 ];
 
-callCodes.map(pref => {
+
+
+let pais = paises.map(pref => {
+    
     let Option= document.createElement("option")
-    Option.innerText = `${pref.numero} ${pref.bandera}`
+    let span = document.createElement("span")
+
+    Option.innerText = `${pref.numero}`
+    span.className = `${pref.clase}`
+    Option.appendChild(span)
     Select.appendChild(Option)
 })
+let imagenPais = document.getElementById("ImagenPais");
+function actualizarBandera() {
+    imagenPais.src = paises.find(p =>
+        p.numero === Select.value
+    ).clase;
+}
+
+actualizarBandera();
