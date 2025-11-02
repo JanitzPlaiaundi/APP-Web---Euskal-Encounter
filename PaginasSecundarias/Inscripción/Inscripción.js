@@ -1,25 +1,25 @@
 const Select=document.getElementById("Prefijo");
 const paises = [
   { numero: "+93", clase: "../../Recursos/Imagenes/Flags/afganistan.png" },   // Afganistán
-  { numero: "+355", clase: "../../Recursos/Imagenes/Flags/al.png" },  // Albania
+  { numero: "+355", clase: "../../Recursos/Imagenes/Flags/albania.png" },  // Albania
   { numero: "+213", clase: "../../Recursos/Imagenes/Flags/argelia.png" },  // Argelia
-  { numero: "+1‑684", clase: "../../Recursos/Imagenes/Flags/ar.webp" },// Samoa Americana
-  { numero: "+376", clase: "../../Recursos/Imagenes/Flags/ar.webp" },  // Andorra
-  { numero: "+244", clase: "../../Recursos/Imagenes/Flags/ar.webp" },  // Angola
-  { numero: "+1‑264", clase: "../../Recursos/Imagenes/Flags/ar.webp" },// Anguila
-  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/ar.webp" },  // Antártica
-  { numero: "+1‑268", clase: "../../Recursos/Imagenes/Flags/ar.webp" },// Antigua y Barbuda
-  { numero: "+54", clase: "../../Recursos/Imagenes/Flags/ar.webp" },   // Argentina
-  { numero: "+374", clase: "flag-icon flag-icon-am" },  // Armenia
-  { numero: "+297", clase: "flag-icon flag-icon-aw" },  // Aruba
-  { numero: "+61", clase: "flag-icon flag-icon-au" },   // Australia
-  { numero: "+43", clase: "flag-icon flag-icon-at" },   // Austria
-  { numero: "+994", clase: "flag-icon flag-icon-az" },  // Azerbaiyán
-  { numero: "+1‑242", clase: "flag-icon flag-icon-bs" },// Bahamas
-  { numero: "+973", clase: "flag-icon flag-icon-bh" },  // Baréin
-  { numero: "+880", clase: "flag-icon flag-icon-bd" },  // Bangladés
-  { numero: "+1‑246", clase: "flag-icon flag-icon-bb" },// Barbados
-  { numero: "+375", clase: "flag-icon flag-icon-by" },  // Bielorrusia
+  { numero: "+1‑684", clase: "../../Recursos/Imagenes/Flags/samoa-americana.png" },// Samoa Americana
+  { numero: "+376", clase: "../../Recursos/Imagenes/Flags/Andorra.png" },  // Andorra
+  { numero: "+244", clase: "../../Recursos/Imagenes/Flags/Angola.png" },  // Angola
+  { numero: "+1‑264", clase: "../../Recursos/Imagenes/Flags/Anguila.png" },// Anguila
+  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/Antartida.png" },  // Antártica
+  { numero: "+1‑268", clase: "../../Recursos/Imagenes/Flags/Antigua-y-Barbuda.png" },// Antigua y Barbuda
+  { numero: "+54", clase: "../../Recursos/Imagenes/Flags/Argentina.png" },   // Argentina
+  { numero: "+374", clase: "" },  // Armenia
+  { numero: "+297", clase: "../../Recursos/Imagenes/Flags/Aruba.png" },  // Aruba
+  { numero: "+61", clase: "../../Recursos/Imagenes/Flags/Australia.png" },   // Australia
+  { numero: "+43", clase: "../../Recursos/Imagenes/Flags/Austria.png" },   // Austria
+  { numero: "+994", clase: "../../Recursos/Imagenes/Flags/Azerbaiyan.png" },  // Azerbaiyán
+  { numero: "+1‑242", clase: "../../Recursos/Imagenes/Flags/Bahamas.png" },// Bahamas
+  { numero: "+973", clase: "../../Recursos/Imagenes/Flags/Barein.png" },  // Baréin
+  { numero: "+880", clase: "../../Recursos/Imagenes/Flags/Banglades.png" },  // Bangladés
+  { numero: "+1‑246", clase: "../../Recursos/Imagenes/Flags/Barbados.png" },// Barbados
+  { numero: "+375", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Bielorrusia
   { numero: "+32", clase: "flag-icon flag-icon-be" },   // Bélgica
   { numero: "+501", clase: "flag-icon flag-icon-bz" },  // Belice
   { numero: "+229", clase: "flag-icon flag-icon-bj" },  // Benín
