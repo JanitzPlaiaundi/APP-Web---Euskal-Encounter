@@ -58,7 +58,6 @@ main h2{
 }
 
 .botonInscribeteHero{
-    color: white;
     background-color: purple;
     border: 2px solid white;
 }
@@ -84,6 +83,9 @@ main h2{
 
 .botonEventoHero:hover{
     background-color: #f9a146;
+}
+.botonEventoHero a{
+    color: purple;
 }
 
 .botonEventoHero:hover a{
