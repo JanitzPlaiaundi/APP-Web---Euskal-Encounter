@@ -75,7 +75,7 @@ function paginaEventos(arrayEventos){
 
         let boton = document.createElement("button")
         boton.className = "btnTarjetas"
-        boton.innerText = "Inscribete"
+        boton.innerText = "Inscríbete"
         div.appendChild(boton)
     })
 
