@@ -42,7 +42,6 @@ header{
     justify-content: center;
     align-items: center;
     gap: 5%;
-    
 }
 
 .enlacesHeader{
@@ -79,4 +78,21 @@ header{
     height: 60%;
     border-radius: 10px;
     font-size: medium;
+}
+
+@media (max-width: 1024px){
+    .headerEnlaces{
+        height: 6vh;
+        gap: 2%;
+    }
+    .enlacesHeader{
+        font-size: 0.6rem;
+    }
+    .botonesRegistro{
+        border: 1px solid black;
+        width: 40%;
+        height: 30%;
+        border-radius: 10px;
+        font-size: 0.3rem;
+    }
 }

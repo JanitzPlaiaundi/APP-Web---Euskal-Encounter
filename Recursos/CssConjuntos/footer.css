@@ -14,7 +14,7 @@ footer{
 }
 
 .divRedes{
-    width: 30%;
+    width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,4 +47,30 @@ footer{
 .textoFooter p{
     font-size: 1.2rem;
     text-align: justify;
+}
+
+@media (max-width: 1024px){
+    footer{
+    height: 15vh;
+    gap: 2%;
+    }
+    .textoFooter h3{
+       font-size: 0.7rem;
+    }
+    .textoFooter p{
+       font-size: 0.5rem;
+    }
+    
+    .enlacesFooter img{
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    .divRedes{
+        gap: 5%;
+    }
+
+    .enlacesFooter{
+        width: 3vw;
+    }
 }
