@@ -6,11 +6,11 @@ const paises = [
   { numero: "+1‑684", clase: "../../Recursos/Imagenes/Flags/samoa-americana.png" },// Samoa Americana
   { numero: "+376", clase: "../../Recursos/Imagenes/Flags/Andorra.png" },  // Andorra
   { numero: "+244", clase: "../../Recursos/Imagenes/Flags/Angola.png" },  // Angola
-  { numero: "+1‑264", clase: "../../Recursos/Imagenes/Flags/Anguila.png" },// Anguila
-  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/Antartida.png" },  // Antártica
-  { numero: "+1‑268", clase: "../../Recursos/Imagenes/Flags/Antigua-y-Barbuda.png" },// Antigua y Barbuda
+  { numero: "+1‑264", clase: "../../Recursos/Imagenes/Flags/Anguilla.png" },// Anguilla
+  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/Antártica.png" },  // Antártica
+  { numero: "+1‑268", clase: "../../Recursos/Imagenes/Flags/Antigua_y_Barbuda.png" },// Antigua y Barbuda
   { numero: "+54", clase: "../../Recursos/Imagenes/Flags/Argentina.png" },   // Argentina
-  { numero: "+374", clase: "" },  // Armenia
+  { numero: "+374", clase: "../../Recursos/Imagenes/Flags/Armenia.png" },  // Armenia
   { numero: "+297", clase: "../../Recursos/Imagenes/Flags/Aruba.png" },  // Aruba
   { numero: "+61", clase: "../../Recursos/Imagenes/Flags/Australia.png" },   // Australia
   { numero: "+43", clase: "../../Recursos/Imagenes/Flags/Austria.png" },   // Austria
@@ -20,226 +20,220 @@ const paises = [
   { numero: "+880", clase: "../../Recursos/Imagenes/Flags/Banglades.png" },  // Bangladés
   { numero: "+1‑246", clase: "../../Recursos/Imagenes/Flags/Barbados.png" },// Barbados
   { numero: "+375", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Bielorrusia
-  { numero: "+32", clase: "flag-icon flag-icon-be" },   // Bélgica
-  { numero: "+501", clase: "flag-icon flag-icon-bz" },  // Belice
-  { numero: "+229", clase: "flag-icon flag-icon-bj" },  // Benín
-  { numero: "+1‑441", clase: "flag-icon flag-icon-bm" },// Bermudas
-  { numero: "+975", clase: "flag-icon flag-icon-bt" },  // Bután
-  { numero: "+591", clase: "flag-icon flag-icon-bo" },  // Bolivia
-  { numero: "+387", clase: "flag-icon flag-icon-ba" },  // Bosnia y Herzegovina
-  { numero: "+267", clase: "flag-icon flag-icon-bw" },  // Botsuana
-  { numero: "+47", clase: "flag-icon flag-icon-bv" },   // Isla Bouvet
-  { numero: "+55", clase: "flag-icon flag-icon-br" },   // Brasil
-  { numero: "+246", clase: "flag-icon flag-icon-io" },  // Territorio Británico del Océano Índico
-  { numero: "+673", clase: "flag-icon flag-icon-bn" },  // Brunéi
-  { numero: "+359", clase: "flag-icon flag-icon-bg" },  // Bulgaria
-  { numero: "+226", clase: "flag-icon flag-icon-bf" },  // Burkina Faso
-  { numero: "+257", clase: "flag-icon flag-icon-bi" },  // Burundi
-  { numero: "+855", clase: "flag-icon flag-icon-kh" },  // Camboya
-  { numero: "+237", clase: "flag-icon flag-icon-cm" },  // Camerún
-  { numero: "+1", clase: "flag-icon flag-icon-ca" },    // Canadá
-  { numero: "+238", clase: "flag-icon flag-icon-cv" },  // Cabo Verde
-  { numero: "+345", clase: "flag-icon flag-icon-ky" }, // Islas Caimán
-  { numero: "+236", clase: "flag-icon flag-icon-cf" },  // República Centroafricana
-  { numero: "+235", clase: "flag-icon flag-icon-td" },  // Chad
-  { numero: "+56", clase: "flag-icon flag-icon-cl" },   // Chile
-  { numero: "+86", clase: "flag-icon flag-icon-cn" },   // China
-  { numero: "+61", clase: "flag-icon flag-icon-cx" },   // Isla Christmas
-  { numero: "+61", clase: "flag-icon flag-icon-cc" },   // Islas Cocos (Keeling)
-  { numero: "+57", clase: "flag-icon flag-icon-co" },   // Colombia
-  { numero: "+269", clase: "flag-icon flag-icon-km" },  // Comoras
-  { numero: "+242", clase: "flag-icon flag-icon-cg" },  // Congo
-  { numero: "+243", clase: "flag-icon flag-icon-cd" },  // República Democrática del Congo
-  { numero: "+672", clase: "flag-icon flag-icon-ck" },  // Islas Cook
-  { numero: "+506", clase: "flag-icon flag-icon-cr" },  // Costa Rica
-  { numero: "+225", clase: "flag-icon flag-icon-ci" },  // Costa de Marfil
-  { numero: "+385", clase: "flag-icon flag-icon-hr" },  // Croacia
-  { numero: "+53", clase: "flag-icon flag-icon-cu" },  // Cuba
-  { numero: "+537", clase: "flag-icon flag-icon-cw" },  // Curazao
-  { numero: "+357", clase: "flag-icon flag-icon-cy" },  // Chipre
-  { numero: "+420", clase: "flag-icon flag-icon-cz" },  // República Checa
-  { numero: "+45", clase: "flag-icon flag-icon-dk" },   // Dinamarca
-  { numero: "+253", clase: "flag-icon flag-icon-dj" },  // Yibuti
-  { numero: "+1‑767", clase: "flag-icon flag-icon-dm" },// Dominica
-  { numero: "+1‑849", clase: "flag-icon flag-icon-do" },// República Dominicana
-  { numero: "+593", clase: "flag-icon flag-icon-ec" },  // Ecuador
-  { numero: "+20", clase: "flag-icon flag-icon-eg" },   // Egipto
-  { numero: "+503", clase: "flag-icon flag-icon-sv" },  // El Salvador
-  { numero: "+240", clase: "flag-icon flag-icon-gq" },  // Guinea Ecuatorial
-  { numero: "+291", clase: "flag-icon flag-icon-er" },  // Eritrea
-  { numero: "+372", clase: "flag-icon flag-icon-ee" },  // Estonia
-  { numero: "+251", clase: "flag-icon flag-icon-et" },  // Etiopía
-  { numero: "+500", clase: "flag-icon flag-icon-fk" },  // Islas Malvinas
-  { numero: "+298", clase: "flag-icon flag-icon-fo" },  // Islas Feroe
-  { numero: "+679", clase: "flag-icon flag-icon-fj" },  // Fiyi
-  { numero: "+358", clase: "flag-icon flag-icon-fi" },  // Finlandia
-  { numero: "+33", clase: "flag-icon flag-icon-fr" },   // Francia
-  { numero: "+594", clase: "flag-icon flag-icon-gf" },  // Guayana Francesa
-  { numero: "+689", clase: "flag-icon flag-icon-pf" },  // Polinesia Francesa
-  { numero: "+241", clase: "flag-icon flag-icon-ga" },  // Gabón
-  { numero: "+220", clase: "flag-icon flag-icon-gm" },  // Gambia
-  { numero: "+995", clase: "flag-icon flag-icon-ge" },  // Georgia
-  { numero: "+49", clase: "flag-icon flag-icon-de" },   // Alemania
-  { numero: "+233", clase: "flag-icon flag-icon-gh" },  // Ghana
-  { numero: "+350", clase: "flag-icon flag-icon-gi" },  // Gibraltar
-  { numero: "+30", clase: "flag-icon flag-icon-gr" },   // Grecia
-  { numero: "+299", clase: "flag-icon flag-icon-gl" },  // Groenlandia
-  { numero: "+1‑473", clase: "flag-icon flag-icon-gd" },// Granada
-  { numero: "+590", clase: "flag-icon flag-icon-gp" },  // Guadalupe
-  { numero: "+1‑671", clase: "flag-icon flag-icon-gu" },// Guam
-  { numero: "+502", clase: "flag-icon flag-icon-gt" },  // Guatemala
-  { numero: "+44‑1481", clase: "flag-icon flag-icon-gg" },// Guernesey
-  { numero: "+224", clase: "flag-icon flag-icon-gn" },  // Guinea
-  { numero: "+245", clase: "flag-icon flag-icon-gw" },  // Guinea-Bisáu
-  { numero: "+595", clase: "flag-icon flag-icon-gy" },  // Guyana
-  { numero: "+509", clase: "flag-icon flag-icon-ht" },  // Haití
-  { numero: "+504", clase: "flag-icon flag-icon-hn" },  // Honduras
-  { numero: "+852", clase: "flag-icon flag-icon-hk" },  // Hong Kong
-  { numero: "+36", clase: "flag-icon flag-icon-hu" },   // Hungría
-  { numero: "+354", clase: "flag-icon flag-icon-is" },  // Islandia
-  { numero: "+91", clase: "flag-icon flag-icon-in" },   // India
-  { numero: "+62", clase: "flag-icon flag-icon-id" },   // Indonesia
-  { numero: "+98", clase: "flag-icon flag-icon-ir" },   // Irán
-  { numero: "+964", clase: "flag-icon flag-icon-iq" },  // Irak
-  { numero: "+353", clase: "flag-icon flag-icon-ie" },  // Irlanda
-  { numero: "+44", clase: "flag-icon flag-icon-im" },  // Isla de Man
-  { numero: "+972", clase: "flag-icon flag-icon-il" }, // Israel
-  { numero: "+39", clase: "flag-icon flag-icon-it" },  // Italia
-  { numero: "+1‑876", clase: "flag-icon flag-icon-jm" },// Jamaica
-  { numero: "+81", clase: "flag-icon flag-icon-jp" },  // Japón
-  { numero: "+44‑1534", clase: "flag-icon flag-icon-je" },// Jersey
-  { numero: "+962", clase: "flag-icon flag-icon-jo" }, // Jordania
-  { numero: "+7", clase: "flag-icon flag-icon-kz" },   // Kazajistán
-  { numero: "+254", clase: "flag-icon flag-icon-ke" }, // Kenia
-  { numero: "+686", clase: "flag-icon flag-icon-ki" }, // Kiribati
-  { numero: "+383", clase: "flag-icon flag-icon-xk" }, // Kosovo (uso no oficial, “xk” en algunos sistemas)
-  { numero: "+965", clase: "flag-icon flag-icon-kw" }, // Kuwait
-  { numero: "+996", clase: "flag-icon flag-icon-kg" }, // Kirguistán
-  { numero: "+856", clase: "flag-icon flag-icon-la" }, // Laos
-  { numero: "+371", clase: "flag-icon flag-icon-lv" }, // Letonia
-  { numero: "+961", clase: "flag-icon flag-icon-lb" }, // Líbano
-  { numero: "+266", clase: "flag-icon flag-icon-ls" }, // Lesoto
-  { numero: "+231", clase: "flag-icon flag-icon-lr" }, // Liberia
-  { numero: "+218", clase: "flag-icon flag-icon-ly" }, // Libia
-  { numero: "+423", clase: "flag-icon flag-icon-li" }, // Liechtenstein
-  { numero: "+370", clase: "flag-icon flag-icon-lt" }, // Lituania
-  { numero: "+352", clase: "flag-icon flag-icon-lu" }, // Luxemburgo
-  { numero: "+853", clase: "flag-icon flag-icon-mo" }, // Macao
-  { numero: "+389", clase: "flag-icon flag-icon-mk" }, // Macedonia del Norte
-  { numero: "+261", clase: "flag-icon flag-icon-mg" }, // Madagascar
-  { numero: "+265", clase: "flag-icon flag-icon-mw" }, // Malaui
-  { numero: "+60", clase: "flag-icon flag-icon-my" },  // Malasia
-  { numero: "+960", clase: "flag-icon flag-icon-mv" }, // Maldivas
-  { numero: "+223", clase: "flag-icon flag-icon-ml" }, // Malí
-  { numero: "+356", clase: "flag-icon flag-icon-mt" }, // Malta
-  { numero: "+692", clase: "flag-icon flag-icon-mh" }, // Islas Marshall
-  { numero: "+596", clase: "flag-icon flag-icon-mq" }, // Martinica
-  { numero: "+222", clase: "flag-icon flag-icon-mr" }, // Mauritania
-  { numero: "+230", clase: "flag-icon flag-icon-mu" }, // Mauricio
-  { numero: "+262", clase: "flag-icon flag-icon-yt" }, // Mayotte
-  { numero: "+52", clase: "flag-icon flag-icon-mx" },  // México
-  { numero: "+691", clase: "flag-icon flag-icon-fm" }, // Micronesia
-  { numero: "+373", clase: "flag-icon flag-icon-md" }, // Moldavia
-  { numero: "+377", clase: "flag-icon flag-icon-mc" }, // Mónaco
-  { numero: "+976", clase: "flag-icon flag-icon-mn" }, // Mongolia
-  { numero: "+382", clase: "flag-icon flag-icon-me" }, // Montenegro
-  { numero: "+1664", clase: "flag-icon flag-icon-ms" },// Montserrat
-  { numero: "+212", clase: "flag-icon flag-icon-ma" }, // Marruecos
-  { numero: "+258", clase: "flag-icon flag-icon-mz" }, // Mozambique
-  { numero: "+95", clase: "flag-icon flag-icon-mm" },  // Birmania (Myanmar)
-  { numero: "+264", clase: "flag-icon flag-icon-na" }, // Namibia
-  { numero: "+674", clase: "flag-icon flag-icon-nr" }, // Nauru
-  { numero: "+977", clase: "flag-icon flag-icon-np" }, // Nepal
-  { numero: "+31", clase: "flag-icon flag-icon-nl" },  // Países Bajos
-  { numero: "+687", clase: "flag-icon flag-icon-nc" }, // Nueva Caledonia
-  { numero: "+64", clase: "flag-icon flag-icon-nz" },  // Nueva Zelanda
-  { numero: "+505", clase: "flag-icon flag-icon-ni" }, // Nicaragua
-  { numero: "+227", clase: "flag-icon flag-icon-ne" }, // Níger
-  { numero: "+234", clase: "flag-icon flag-icon-ng" }, // Nigeria
-  { numero: "+683", clase: "flag-icon flag-icon-nu" }, // Niue
-  { numero: "+672", clase: "flag-icon flag-icon-nf" }, // Isla Norfolk
-  { numero: "+850", clase: "flag-icon flag-icon-kp" }, // Corea del Norte
-  { numero: "+1‑670", clase: "flag-icon flag-icon-mp" },// Islas Marianas del Norte
-  { numero: "+47", clase: "flag-icon flag-icon-no" },  // Noruega
-  { numero: "+968", clase: "flag-icon flag-icon-om" }, // Omán
-  { numero: "+92", clase: "flag-icon flag-icon-pk" },  // Pakistán
-  { numero: "+680", clase: "flag-icon flag-icon-pw" }, // Palaos
-  { numero: "+970", clase: "flag-icon flag-icon-ps" }, // Palestina
-  { numero: "+507", clase: "flag-icon flag-icon-pa" }, // Panamá
-  { numero: "+675", clase: "flag-icon flag-icon-pg" }, // Papúa Nueva Guinea
-  { numero: "+595", clase: "flag-icon flag-icon-py" }, // Paraguay
-  { numero: "+51", clase: "flag-icon flag-icon-pe" },  // Perú
-  { numero: "+63", clase: "flag-icon flag-icon-ph" },  // Filipinas
-  { numero: "+48", clase: "flag-icon flag-icon-pl" },  // Polonia
-  { numero: "+351", clase: "flag-icon flag-icon-pt" }, // Portugal
-  { numero: "+1‑787", clase: "flag-icon flag-icon-pr" },// Puerto Rico
-  { numero: "+974", clase: "flag-icon flag-icon-qa" }, // Catar
-  { numero: "+262", clase: "flag-icon flag-icon-re" }, // Reunión
-  { numero: "+40", clase: "flag-icon flag-icon-ro" },  // Rumanía
-  { numero: "+7", clase: "flag-icon flag-icon-ru" },   // Rusia
-  { numero: "+250", clase: "flag-icon flag-icon-rw" }, // Ruanda
-  { numero: "+590", clase: "flag-icon flag-icon-bl" }, // San Bartolomé
-  { numero: "+290", clase: "flag-icon flag-icon-sh" }, // Santa Elena
-  { numero: "+1‑869", clase: "flag-icon flag-icon-kn" },// San Cristóbal y Nieves
-  { numero: "+1‑758", clase: "flag-icon flag-icon-lc" },// Santa Lucía
-  { numero: "+1‑784", clase: "flag-icon flag-icon-vc" },// San Vicente y Granadinas
-  { numero: "+685", clase: "flag-icon flag-icon-ws" }, // Samoa
-  { numero: "+378", clase: "flag-icon flag-icon-sm" }, // San Marino
-  { numero: "+239", clase: "flag-icon flag-icon-st" }, // Santo Tomé y Príncipe
-  { numero: "+966", clase: "flag-icon flag-icon-sa" }, // Arabia Saudí
-  { numero: "+221", clase: "flag-icon flag-icon-sn" }, // Senegal
-  { numero: "+381", clase: "flag-icon flag-icon-rs" }, // Serbia
-  { numero: "+248", clase: "flag-icon flag-icon-sc" }, // Seychelles
-  { numero: "+232", clase: "flag-icon flag-icon-sl" }, // Sierra Leona
-  { numero: "+65", clase: "flag-icon flag-icon-sg" },  // Singapur
-  { numero: "+1‑721", clase: "flag-icon flag-icon-sx" },// Sint Maarten
-  { numero: "+421", clase: "flag-icon flag-icon-sk" }, // Eslovaquia
-  { numero: "+386", clase: "flag-icon flag-icon-si" }, // Eslovenia
-  { numero: "+677", clase: "flag-icon flag-icon-sb" }, // Islas Salomón
-  { numero: "+252", clase: "flag-icon flag-icon-so" }, // Somalia
-  { numero: "+27", clase: "flag-icon flag-icon-za" },  // Sudáfrica
-  { numero: "+500", clase: "flag-icon flag-icon-gs" }, // Georgia del Sur e Islas Sandwich del Sur
-  { numero: "+211", clase: "flag-icon flag-icon-ss" }, // Sudán del Sur
-  { numero: "+34", clase: "flag-icon flag-icon-es" },  // España
-  { numero: "+94", clase: "flag-icon flag-icon-lk" },  // Sri Lanka
-  { numero: "+249", clase: "flag-icon flag-icon-sd" }, // Sudán
-  { numero: "+597", clase: "flag-icon flag-icon-sr" }, // Surinam
-  { numero: "+47", clase: "flag-icon flag-icon-sj" },  // Svalbard y Jan Mayen
-  { numero: "+46", clase: "flag-icon flag-icon-se" },  // Suecia
-  { numero: "+41", clase: "flag-icon flag-icon-ch" },  // Suiza
-  { numero: "+963", clase: "flag-icon flag-icon-sy" }, // Siria
-  { numero: "+886", clase: "flag-icon flag-icon-tw" }, // Taiwán
-  { numero: "+992", clase: "flag-icon flag-icon-tj" }, // Tayikistán
-  { numero: "+255", clase: "flag-icon flag-icon-tz" }, // Tanzania
-  { numero: "+66", clase: "flag-icon flag-icon-th" },  // Tailandia
-  { numero: "+670", clase: "flag-icon flag-icon-tl" }, // Timor Oriental
-  { numero: "+228", clase: "flag-icon flag-icon-tg" }, // Togo
-  { numero: "+690", clase: "flag-icon flag-icon-tk" }, // Tokelau
-  { numero: "+676", clase: "flag-icon flag-icon-to" }, // Tonga
-  { numero: "+1‑868", clase: "flag-icon flag-icon-tt" },// Trinidad y Tobago
-  { numero: "+216", clase: "flag-icon flag-icon-tn" }, // Túnez
-  { numero: "+90", clase: "flag-icon flag-icon-tr" },  // Turquía
-  { numero: "+993", clase: "flag-icon flag-icon-tm" }, // Turkmenistán
-  { numero: "+1‑649", clase: "flag-icon flag-icon-tc" },// Islas Turcas y Caicos
-  { numero: "+688", clase: "flag-icon flag-icon-tv" }, // Tuvalu
-  { numero: "+1‑340", clase: "flag-icon flag-icon-vi" },// Islas Vírgenes (EE. UU.)
-  { numero: "+256", clase: "flag-icon flag-icon-ug" }, // Uganda
-  { numero: "+380", clase: "flag-icon flag-icon-ua" }, // Ucrania
-  { numero: "+971", clase: "flag-icon flag-icon-ae" }, // Emiratos Árabes Unidos
-  { numero: "+44‑20", clase: "flag-icon flag-icon-gb" },// Reino Unido (Gran Bretaña)
-  { numero: "+1‑284", clase: "flag-icon flag-icon-vg" },// Islas Vírgenes Británicas
-  { numero: "+1‑758", clase: "flag-icon flag-icon-vi" },// Islas Vírgenes de EE.UU.
-  { numero: "+598", clase: "flag-icon flag-icon-uy" }, // Uruguay
-  { numero: "+998", clase: "flag-icon flag-icon-uz" }, // Uzbekistán
-  { numero: "+678", clase: "flag-icon flag-icon-vu" }, // Vanuatu
-  { numero: "+379", clase: "flag-icon flag-icon-va" }, // Ciudad del Vaticano
-  { numero: "+58", clase: "flag-icon flag-icon-ve" },  // Venezuela
-  { numero: "+84", clase: "flag-icon flag-icon-vn" },  // Vietnam
-  { numero: "+681", clase: "flag-icon flag-icon-wf" }, // Wallis y Futuna
-  { numero: "+212", clase: "flag-icon flag-icon-eh" }, // Sáhara Occidental
-  { numero: "+967", clase: "flag-icon flag-icon-ye" }, // Yemen
-  { numero: "+260", clase: "flag-icon flag-icon-zm" }, // Zambia
-  { numero: "+263", clase: "flag-icon flag-icon-zw" }  // Zimbabue
+  { numero: "+32", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Bélgica
+  { numero: "+501", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Belice
+  { numero: "+229", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Benín
+  { numero: "+1‑441", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Bermudas
+  { numero: "+975", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Bután
+  { numero: "+591", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Bolivia
+  { numero: "+387", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Bosnia y Herzegovina
+  { numero: "+267", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Botsuana
+  { numero: "+55", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Brasil
+  { numero: "+246", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Territorio Británico del Océano Índico
+  { numero: "+673", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Brunéi
+  { numero: "+359", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Bulgaria
+  { numero: "+226", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Burkina Faso
+  { numero: "+257", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Burundi
+  { numero: "+855", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Camboya
+  { numero: "+237", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Camerún
+  { numero: "+1", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },    // Canadá
+  { numero: "+238", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Cabo Verde
+  { numero: "+345", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Islas Caimán
+  { numero: "+236", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // República Centroafricana
+  { numero: "+235", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Chad
+  { numero: "+56", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Chile
+  { numero: "+86", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // China
+  { numero: "+61", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Isla Christmas
+  { numero: "+61", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Islas Cocos (Keeling)
+  { numero: "+57", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Colombia
+  { numero: "+269", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Comoras
+  { numero: "+242", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Congo
+  { numero: "+243", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // República Democrática del Congo
+  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Islas Cook
+  { numero: "+506", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Costa Rica
+  { numero: "+225", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Costa de Marfil
+  { numero: "+385", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Croacia
+  { numero: "+53", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Cuba
+  { numero: "+537", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Curazao
+  { numero: "+357", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Chipre
+  { numero: "+420", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // República Checa
+  { numero: "+45", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Dinamarca
+  { numero: "+253", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Yibuti
+  { numero: "+1‑767", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Dominica
+  { numero: "+1‑849", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// República Dominicana
+  { numero: "+593", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Ecuador
+  { numero: "+20", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Egipto
+  { numero: "+503", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // El Salvador
+  { numero: "+240", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Guinea Ecuatorial
+  { numero: "+291", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Eritrea
+  { numero: "+372", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Estonia
+  { numero: "+251", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Etiopía
+  { numero: "+500", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Islas Malvinas
+  { numero: "+298", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Islas Feroe
+  { numero: "+679", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Fiyi
+  { numero: "+358", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Finlandia
+  { numero: "Francia +33, Guadalupe +590, Mayotte +262, Wallis y Futuna +681", clase: "../../Recursos/Imagenes/Flags/Francia.webp" },   // Francia
+  { numero: "+594", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Guayana Francesa
+  { numero: "+689", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Polinesia Francesa
+  { numero: "+241", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Gabón
+  { numero: "+220", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Gambia
+  { numero: "+995", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Georgia
+  { numero: "+49", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Alemania
+  { numero: "+233", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Ghana
+  { numero: "+350", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Gibraltar
+  { numero: "+30", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Grecia
+  { numero: "+299", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Groenlandia
+  { numero: "+1‑473", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Granada
+  { numero: "+1‑671", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Guam
+  { numero: "+502", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Guatemala
+  { numero: "+44‑1481", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Guernesey
+  { numero: "+224", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Guinea
+  { numero: "+245", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Guinea-Bisáu
+  { numero: "+595", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Guyana
+  { numero: "+509", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Haití
+  { numero: "+504", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Honduras
+  { numero: "+852", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Hong Kong
+  { numero: "+36", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Hungría
+  { numero: "+354", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Islandia
+  { numero: "+91", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // India
+  { numero: "+62", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Indonesia
+  { numero: "+98", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Irán
+  { numero: "+964", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Irak
+  { numero: "+353", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Irlanda
+  { numero: "+44", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Isla de Man
+  { numero: "+972", clase: "../../Recursos/Imagenes/Flags/Israel.webp" }, // Israel
+  { numero: "+39", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Italia
+  { numero: "+1‑876", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Jamaica
+  { numero: "+81", clase: "../../Recursos/Imagenes/Flags/Japón.webp" },  // Japón
+  { numero: "+44‑1534", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Jersey
+  { numero: "+962", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Jordania
+  { numero: "+7", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },   // Kazajistán
+  { numero: "+254", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Kenia
+  { numero: "+686", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Kiribati
+  { numero: "+383", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Kosovo (uso no oficial, “xk” en algunos sistemas)
+  { numero: "+965", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Kuwait
+  { numero: "+996", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Kirguistán
+  { numero: "+856", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Laos
+  { numero: "+371", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Letonia
+  { numero: "+961", clase: "../../Recursos/Imagenes/Flags/Líbano.webp" }, // Líbano
+  { numero: "+266", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Lesoto
+  { numero: "+231", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Liberia
+  { numero: "+218", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Libia
+  { numero: "+423", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Liechtenstein
+  { numero: "+370", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Lituania
+  { numero: "+352", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Luxemburgo
+  { numero: "+853", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Macao
+  { numero: "+389", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Macedonia del Norte
+  { numero: "+261", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Madagascar
+  { numero: "+265", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Malaui
+  { numero: "+60", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Malasia
+  { numero: "+960", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Maldivas
+  { numero: "+223", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Malí
+  { numero: "+356", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Malta
+  { numero: "+692", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Islas Marshall
+  { numero: "+596", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Martinica
+  { numero: "+222", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Mauritania
+  { numero: "+230", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Mauricio
+  { numero: "+52", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // México
+  { numero: "+691", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Estados Federados de Micronesia
+  { numero: "+373", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Moldavia
+  { numero: "+377", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Mónaco
+  { numero: "+976", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Mongolia
+  { numero: "+382", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Montenegro
+  { numero: "+1664", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Montserrat
+  { numero: "+212", clase: "../../Recursos/Imagenes/Flags/Marruecos.webp" }, // Marruecos
+  { numero: "+258", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Mozambique
+  { numero: "+95", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Birmania (Myanmar)
+  { numero: "+264", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Namibia
+  { numero: "+674", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Nauru
+  { numero: "+977", clase: "../../Recursos/Imagenes/Flags/Nepal.webp" }, // Nepal
+  { numero: "+31", clase: "../../Recursos/Imagenes/Flags/Países_Bajos.webp" },  // Países Bajos
+  { numero: "+687", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Nueva Caledonia
+  { numero: "+64", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Nueva Zelanda
+  { numero: "+505", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Nicaragua
+  { numero: "+227", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Níger
+  { numero: "+234", clase: "../../Recursos/Imagenes/Flags/Nigeria.webp" }, // Nigeria
+  { numero: "+683", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Niue
+  { numero: "+672", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Isla Norfolk
+  { numero: "+850", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Corea del Norte
+  { numero: "+82", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Corea del sur
+  { numero: "+1‑670", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Islas Marianas del Norte
+  { numero: "+47", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Noruega
+  { numero: "+968", clase: "../../Recursos/Imagenes/Flags/Omán.webp" }, // Omán
+  { numero: "+92", clase: "../../Recursos/Imagenes/Flags/Pakistán.webp" },  // Pakistán
+  { numero: "+680", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Palaos
+  { numero: "+970", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Palestina
+  { numero: "+507", clase: "../../Recursos/Imagenes/Flags/Panamá.webp" }, // Panamá
+  { numero: "+675", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Papúa Nueva Guinea
+  { numero: "+595", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Paraguay
+  { numero: "+51", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Perú
+  { numero: "+63", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Filipinas
+  { numero: "+48", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Polonia
+  { numero: "+351", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Portugal
+  { numero: "+1‑787", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Puerto Rico
+  { numero: "+974", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Catar
+  { numero: "+40", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Rumanía
+  { numero: "+7", clase: "../../Recursos/Imagenes/Flags/Rusia.webp" },   // Rusia
+  { numero: "+250", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Ruanda
+  { numero: "+290", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Santa Elena
+  { numero: "+1‑869", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// San Cristóbal y Nieves
+  { numero: "+1‑758", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Santa Lucía
+  { numero: "+1‑784", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// San Vicente y Granadinas
+  { numero: "+685", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Samoa
+  { numero: "+378", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // San Marino
+  { numero: "+239", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Santo Tomé y Príncipe
+  { numero: "+966", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Arabia Saudí
+  { numero: "+221", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Senegal
+  { numero: "+381", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Serbia
+  { numero: "+248", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Seychelles
+  { numero: "+232", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Sierra Leona
+  { numero: "+65", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Singapur
+  { numero: "+1‑721", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// San Martín
+  { numero: "+421", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Eslovaquia
+  { numero: "+386", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Eslovenia
+  { numero: "+677", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Islas Salomón
+  { numero: "+252", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Somalia
+  { numero: "+27", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Sudáfrica
+  { numero: "+500", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Georgia del Sur e Islas Sandwich del Sur
+  { numero: "+211", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Sudán del Sur
+  { numero: "+34", clase: "../../Recursos/Imagenes/Flags/España.webp" },  // España
+  { numero: "+94", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Sri Lanka
+  { numero: "+249", clase: "../../Recursos/Imagenes/Flags/Sudán.webp" }, // Sudán
+  { numero: "+597", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Surinam
+  { numero: "+47", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Noruega (Svalbard y Jan Mayen)
+  { numero: "+46", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Suecia
+  { numero: "+41", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Suiza
+  { numero: "+963", clase: "../../Recursos/Imagenes/Flags/Siria.webp" }, // Siria
+  { numero: "+886", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Taiwán
+  { numero: "+992", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Tayikistán
+  { numero: "+255", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Tanzania
+  { numero: "+66", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Tailandia
+  { numero: "+670", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Timor Oriental
+  { numero: "+228", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Togo
+  { numero: "+690", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Tokelau
+  { numero: "+676", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Tonga
+  { numero: "+1‑868", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Trinidad y Tobago
+  { numero: "+216", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Túnez
+  { numero: "+90", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Turquía
+  { numero: "+993", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Turkmenistán
+  { numero: "+1‑649", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Islas Turcas y Caicos
+  { numero: "+688", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Tuvalu
+  { numero: "+1‑340, +1‑758", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Islas Vírgenes (EE. UU.)
+  { numero: "+256", clase: "../../Recursos/Imagenes/Flags/Uganda.webp" }, // Uganda
+  { numero: "+380", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Ucrania
+  { numero: "+971", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Emiratos Árabes Unidos
+  { numero: "+44‑20", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Reino Unido
+  { numero: "+1‑284", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },// Islas Vírgenes Británicas
+  { numero: "+598", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Uruguay
+  { numero: "+998", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Uzbekistán
+  { numero: "+678", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Vanuatu
+  { numero: "+379", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Ciudad del Vaticano
+  { numero: "+58", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Venezuela
+  { numero: "+84", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" },  // Vietnam
+  { numero: "+212", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Sáhara Occidental
+  { numero: "+967", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Yemen
+  { numero: "+260", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }, // Zambia
+  { numero: "+263", clase: "../../Recursos/Imagenes/Flags/Bielorrusia.png" }  // Zimbabue
 ];
 
 
