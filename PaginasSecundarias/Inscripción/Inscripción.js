@@ -1,5 +1,6 @@
 const Select=document.getElementById("Prefijo");
 const paises = [
+  { numero: "España +34", clase: "../../Recursos/Imagenes/Flags/España.webp" },  // España
   { numero: "Afganistán +93", clase: "../../Recursos/Imagenes/Flags/afganistan.png" },   // Afganistán
   { numero: "Albania +355", clase: "../../Recursos/Imagenes/Flags/albania.png" },  // Albania
   { numero: "Argelia +213", clase: "../../Recursos/Imagenes/Flags/argelia.png" },  // Argelia
@@ -199,7 +200,6 @@ const paises = [
   { numero: "Sudáfrica+27", clase: "../../Recursos/Imagenes/Flags/Sudáfrica.png" },  // Sudáfrica
   { numero: "Georgia e Islas Sandwich del Sur +500", clase: "../../Recursos/Imagenes/Flags/Georgia_del_Sur_e_Islas_Sandwich_del_Sur.png" }, // Georgia del Sur e Islas Sandwich del Sur
   { numero: "Sudán del Sur +211", clase: "../../Recursos/Imagenes/Flags/Sudán_del_Sur.png" }, // Sudán del Sur
-  { numero: "España +34", clase: "../../Recursos/Imagenes/Flags/España.webp" },  // España
   { numero: "Sri Lanka +94", clase: "../../Recursos/Imagenes/Flags/Sri_Lanka.png" },  // Sri Lanka
   { numero: "Sudán +249", clase: "../../Recursos/Imagenes/Flags/Sudán.webp" }, // Sudán
   { numero: "Surinam +597", clase: "../../Recursos/Imagenes/Flags/Surinam.png" }, // Surinam
