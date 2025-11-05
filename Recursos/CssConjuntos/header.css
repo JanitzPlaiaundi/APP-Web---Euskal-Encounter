@@ -22,6 +22,7 @@ header{
     display: flex;
     justify-content: space-evenly;
     border-bottom: 1px solid black;
+    position: relative;
 }
 
 .sectionLogoHeader{
@@ -80,10 +81,46 @@ header{
     font-size: medium;
 }
 
+#botonMenuMovil{
+    display: none;
+    z-index: 100;
+}
+
+#menuMovil{
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(39, 39, 39);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+}
+#menuMovil a{
+    color: rgb(214, 214, 214);
+    margin: 5%;
+    text-decoration: none;
+    display: none;
+}
+
+#menuMovil a:hover{
+    color: white;
+    font-size: 1rem;
+}
+
+#fotoMenuMoviles{
+    height: 100%;
+}
+
+
 @media (max-width: 1024px){
+    header{
+        justify-content: space-between;
+    }
     .headerEnlaces{
-        height: 6vh;
-        gap: 2%;
+        display: none;
     }
     .enlacesHeader{
         font-size: 0.6rem;
@@ -91,8 +128,22 @@ header{
     .botonesRegistro{
         border: 1px solid black;
         width: 40%;
-        height: 30%;
+        height: 50%;
         border-radius: 10px;
-        font-size: 0.3rem;
+        font-size: 0.5rem;
+    }
+    #botonMenuMovil{
+        display: block;
+        width: 20px;
+        aspect-ratio: 1/1;
+        background-color: transparent;
+        border: none;
+    }
+
+    .headerBotones{
+        width: 30vw;
+    }
+    #menuMovil a{
+        display: block;
     }
 }
