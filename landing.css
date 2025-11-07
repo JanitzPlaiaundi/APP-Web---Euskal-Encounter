@@ -54,29 +54,41 @@ main h2{
 }
 
 .centrarBotonesHero a{
+    text-align: center;
+    line-height: 7vh;
     text-decoration: none;
 }
 
-.botonInscribeteHero{
+.linkInscribete, .linkEventos {
+    padding: 5px 60px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.linkInscribete{
     background-color: purple;
     border: 2px solid white;
     color: white;
 }
 
-.botonInscribeteHero:hover{
+.linkInscribete:hover{
     background-color: #f9a146;
     border: 2px solid purple;
     color: purple;
 }
 
-.botonEventoHero{
-    
+.linkEventos{
     background-color: white;
     border: 2px solid purple;
     color: purple;
 }
 
-.botonEventoHero:hover{
+.linkEventos:hover{
     background-color: #f9a146;
     color: white;
 }
