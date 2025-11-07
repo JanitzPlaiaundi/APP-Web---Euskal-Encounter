@@ -14,13 +14,11 @@ header {
     color: rgb(0, 0, 0);
 }
 .header p {
-    margin: 0;
-    max-width: auto;
+    margin: 0;  
 }
 .contenedor-principal {
     display: flex;
     justify-content: center;
-    max-width: auto;
     margin: 5vh auto;
     padding: 0 20px;
 }
