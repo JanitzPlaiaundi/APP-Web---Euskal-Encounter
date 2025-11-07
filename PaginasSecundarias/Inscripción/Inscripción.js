@@ -105,7 +105,6 @@ const paises = [
   { numero: "Irak +964", clase: "../../Recursos/Imagenes/Flags/Irak.png" },  // Irak
   { numero: "Irlanda +353", clase: "../../Recursos/Imagenes/Flags/Irlanda.png" },  // Irlanda
   { numero: "Isla de Man +44", clase: "../../Recursos/Imagenes/Flags/Isla_de_Man.png" },  // Isla de Man
-  { numero: "Israel +972", clase: "../../Recursos/Imagenes/Flags/Israel.webp" }, // Israel
   { numero: "Italia +39", clase: "../../Recursos/Imagenes/Flags/Italia.png" },  // Italia
   { numero: "Jamaica +1‑876", clase: "../../Recursos/Imagenes/Flags/Jamaica.png" },// Jamaica
   { numero: "Japón +81", clase: "../../Recursos/Imagenes/Flags/Japón.webp" },  // Japón
