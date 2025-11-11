@@ -43,15 +43,6 @@ main h2{
     gap: 3%;
     margin-top: 5vh;
 }
-.botonesHero{
-    width: 15vw;
-    height: 7vh;
-    border-radius: 16px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: "Bahnschrift";
-    transition: 0.3s;
-}
 
 .centrarBotonesHero a{
     text-align: center;
@@ -60,14 +51,14 @@ main h2{
 }
 
 .linkInscribete, .linkEventos {
-    padding: 5px 60px;
-    font-size: 1.1rem;
+    width: 15vw;
+    height: 7vh;
+    border-radius: 16px;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
+    font-family: "Bahnschrift";
     transition: all 0.3s ease;
     display: inline-block;
-    text-align: center;
 }
 
 .linkInscribete{
@@ -224,7 +215,7 @@ main h2{
     main h2{
         font-size: clamp(1rem, 1.5rem, 2rem);
     }
-    .botonesHero{
+    .centrarBotonesHero a{
         width: 30vw;
         height: 7vh;
         border-radius: 16px;
