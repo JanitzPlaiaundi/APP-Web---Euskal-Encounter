@@ -255,3 +255,10 @@ main h2{
 }
 }
 
+@media (max-width: 400px) {
+    .botonRegistro{
+        width: 50vw;
+        height: 5vh;
+        font-size: 5rem;
+    }
+}
