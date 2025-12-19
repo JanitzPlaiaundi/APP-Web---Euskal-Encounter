@@ -14,11 +14,13 @@ function menuParaMoviles() {
             if (defaultMenuMovil == false) {
                 menuMovil.style.transform = "translateY(0vh)"
                 defaultMenuMovil = true
-                imagenMenu.src = "Recursos/Imagenes/BOTON_x.png"
+                imagenMenu.src = "Recursos/Imagenes/BOTON_X.png"
+                document.documentElement.style.overflow = "hidden"
             } else {
                 menuMovil.style.transform = "translateY(-100vh)"
                 defaultMenuMovil = false
                 imagenMenu.src = "Recursos/Imagenes/BOTON_info.png"
+                document.documentElement.style.overflow = ""
             }
         } else {
             defaultMenuMovil = false
