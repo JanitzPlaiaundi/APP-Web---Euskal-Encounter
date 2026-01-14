@@ -14,11 +14,12 @@ function menuParaMoviles() {
             if (defaultMenuMovil == false) {
                 menuMovil.style.transform = "translateY(0vh)"
                 defaultMenuMovil = true
-                imagenMenu.src = "Recursos/Imagenes/BOTON_x.png"
+                imagenMenu.src = document.title == "Euskal Encounter" ? "Recursos/Imagenes/BOTON_x.png" : "../../Recursos/Imagenes/BOTON_x.png"
             } else {
+                headerContainer.style.overflow = "hidden"
                 menuMovil.style.transform = "translateY(-100vh)"
                 defaultMenuMovil = false
-                imagenMenu.src = "Recursos/Imagenes/BOTON_info.png"
+                imagenMenu.src = document.title == "Euskal Encounter" ? "Recursos/Imagenes/BOTON_info.png" : "../../Recursos/Imagenes/BOTON_info.png"
             }
         } else {
             defaultMenuMovil = false
@@ -35,5 +36,7 @@ addEventListener("resize", () => {
     menuMovil.style.transition = "0s"
     menuMovil.style.width = `${innerWidth}`
     menuMovil.style.transform = "translateY(-100vh)"
-    imagenMenu.src = "Recursos/Imagenes/BOTON_info.png"
+    imagenMenu.src = document.title == "Euskal Encounter" ? "Recursos/Imagenes/BOTON_info.png" : "../../Recursos/Imagenes/BOTON_info.png"
+    setTimeout(() => {menuMovil.style.transition = "2s"}, 1000)
+    
 })

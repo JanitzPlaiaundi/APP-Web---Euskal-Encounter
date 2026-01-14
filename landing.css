@@ -84,6 +84,7 @@ main h2{
     color: white;
 }
 
+
 .sectionCalendario{
     height: 90vh;
     margin-top: 10vh;
@@ -255,3 +256,10 @@ main h2{
 }
 }
 
+@media (max-width: 400px) {
+    .botonRegistro{
+        width: 50vw;
+        height: 5vh;
+        font-size: 5rem;
+    }
+}
