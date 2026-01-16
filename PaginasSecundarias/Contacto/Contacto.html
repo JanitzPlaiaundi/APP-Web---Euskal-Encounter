@@ -8,10 +8,20 @@
     <link rel="stylesheet" href="Contacto.css">
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/footer.css">
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/header.css">
+    <script src="../../Recursos/JSConjuntos/menuHeader.js" defer></script>
+    <script src="../../Recursos/JSConjuntos/userHeader.js" defer></script>
 
 </head>
 <body>
     <header>
+        <nav id="menuMovil">
+            <a href="../../index.html">Inicio</a>
+            <a href="../Eventos/Eventos.html">Eventos</a>
+            <a href="../Participantes/participantes.html">Participantes</a>
+            <a href="../Calendario/Calendario.html">Calendario</a>
+            <a href="../Inscripción/Inscripción.html">Inscripción</a>
+            <a href="../Contacto/Contacto.html">Contacto</a>
+        </nav>
         <section class="sectionLogoHeader">
             <a href="#"><img  src="/Recursos/Imagenes/logoHeader.png" alt="logoHeader" class="logoHeader"></a>
         </section>
@@ -23,9 +33,12 @@
             <a class="enlacesHeader" href="../Inscripción/Inscripción.html">Inscripción</a>
             <a class="enlacesHeader" href="#">Contacto</a>
         </nav>
-        <section class="headerBotones">
-            <button class="botonInicioDeSesion botonesRegistro">Iniciar sesión</button>
-            <button class="botonRegistro botonesRegistro">Registrarse</button>
+        <section class="headerBotones" id="headerUser">
+            <a class="botonInicioDeSesion botonesRegistro" id="btnLogin" href="../InicioSesion/InicioSesionRegistrarse.html">Iniciar sesión</a>
+            <a class="botonRegistro botonesRegistro" id="btnRegister" href="../InicioSesion/InicioSesionRegistrarse.html#register">Registrarse</a>
+            <button id="botonMenuMovil">
+                <img id="fotoMenuMoviles" src="../../Recursos/Imagenes/BOTON_info.png">
+            </button>
         </section>
     </header>
 

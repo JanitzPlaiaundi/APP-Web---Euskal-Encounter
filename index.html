@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="landing.css">
     <link rel="stylesheet" href="Recursos/CssConjuntos/header.css">
     <link rel="stylesheet" href="Recursos/CssConjuntos/footer.css">
+    <script src="Recursos/JSConjuntos/userHeader.js" defer></script>
     <script src="Recursos/JSConjuntos/menuHeader.js" defer></script>
 </head>
 <body>
@@ -31,11 +32,15 @@
             <a class="enlacesHeader" href="PaginasSecundarias/Inscripción/Inscripción.html">Inscripción</a>
             <a class="enlacesHeader" href="PaginasSecundarias/Contacto/Contacto.html">Contacto</a>
         </nav>
-        <section class="headerBotones">
-            <button class="botonInicioDeSesion botonesRegistro">Iniciar sesión</button>
-            <button class="botonRegistro botonesRegistro">Registrarse</button>
-            <button id="botonMenuMovil"><img id="fotoMenuMoviles" src="Recursos/Imagenes/BOTON_info.png" alt="Boton Menu header"></button>
+        <section class="headerBotones" id="headerUser">
+            <a class="botonInicioDeSesion botonesRegistro" id="btnLogin" href="PaginasSecundarias/InicioSesion/InicioSesionRegistrarse.html">Iniciar sesión</a>
+            <a class="botonRegistro botonesRegistro" id="btnRegister" href="PaginasSecundarias/InicioSesion/InicioSesionRegistrarse.html#register">Registrarse</a>
+            <button id="botonMenuMovil">
+                <img id="fotoMenuMoviles" src="Recursos/Imagenes/BOTON_info.png">
+            </button>
         </section>
+
+
     </header>
     <main>
         <img class="imagenHero" src="/Recursos/Imagenes/fotoHeroSection.png" alt="imagenHero">
@@ -76,7 +81,7 @@
             </section>
         </div>
     </section>
-    <footer >
+    <footer>
         <div class="textoFooter">
             <h3>Sobre nosotros</h3>
             <p>Euskal Encounter reúne cada año a miles de aficionados a la tecnología y los videojuegos para compartir experiencias, competir y disfrutar de la cultura digital.</p>
