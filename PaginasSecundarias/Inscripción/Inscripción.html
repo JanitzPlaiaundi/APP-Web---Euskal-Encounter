@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/header.css">
     <script src="Inscripción.js" defer></script>
     <script src="../../Recursos/JSConjuntos/menuHeader.js" defer></script>
+    <script src="../../Recursos/JSConjuntos/userHeader.js" defer></script>
+
 </head>
 <body>
     <header>
@@ -33,10 +35,12 @@
             <a class="enlacesHeader" href="#">Inscripción</a>
             <a class="enlacesHeader" href="../Contacto/Contacto.html">Contacto</a>
         </nav>
-        <section class="headerBotones">
-            <a class="botonInicioDeSesion botonesRegistro" href="PaginasSecundarias/InicioSesion/InicioSesion.html">Iniciar sesión</a>
-            <a class="botonRegistro botonesRegistro" href="#">Registrarse</a>
-            <button id="botonMenuMovil"><img id="fotoMenuMoviles" src="../../Recursos/Imagenes/BOTON_info.png" alt="Boton Menu header"></button>
+        <section class="headerBotones" id="headerUser">
+            <a class="botonInicioDeSesion botonesRegistro" id="btnLogin" href="../InicioSesion/InicioSesionRegistrarse.html">Iniciar sesión</a>
+            <a class="botonRegistro botonesRegistro" id="btnRegister" href="../InicioSesion/InicioSesionRegistrarse.html#register">Registrarse</a>
+            <button id="botonMenuMovil">
+                <img id="fotoMenuMoviles" src="../../Recursos/Imagenes/BOTON_info.png">
+            </button>
         </section>
     </header>
     <div class="header">
