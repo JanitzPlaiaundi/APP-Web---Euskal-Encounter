@@ -14,12 +14,22 @@ function menuParaMoviles() {
             if (defaultMenuMovil == false) {
                 menuMovil.style.transform = "translateY(0vh)"
                 defaultMenuMovil = true
+<<<<<<< HEAD
                 imagenMenu.src = document.title == "Euskal Encounter" ? "Recursos/Imagenes/BOTON_x.png" : "../../Recursos/Imagenes/BOTON_x.png"
+=======
+                imagenMenu.src = "Recursos/Imagenes/BOTON_X.png"
+                document.documentElement.style.overflow = "hidden"
+>>>>>>> Janitz
             } else {
                 headerContainer.style.overflow = "hidden"
                 menuMovil.style.transform = "translateY(-100vh)"
                 defaultMenuMovil = false
+<<<<<<< HEAD
                 imagenMenu.src = document.title == "Euskal Encounter" ? "Recursos/Imagenes/BOTON_info.png" : "../../Recursos/Imagenes/BOTON_info.png"
+=======
+                imagenMenu.src = "Recursos/Imagenes/BOTON_info.png"
+                document.documentElement.style.overflow = ""
+>>>>>>> Janitz
             }
         } else {
             defaultMenuMovil = false
