@@ -1,5 +1,10 @@
 {
+<<<<<<< HEAD
     "workbench.preferredLightColorTheme": "Default Dark Modern",
     "window.autoDetectColorScheme": true,
     "workbench.colorTheme": "Visual Studio Dark"
 }
+=======
+  "liveServer.settings.port": 5501
+}
+>>>>>>> Janitz
