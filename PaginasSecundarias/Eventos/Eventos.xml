@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Eventos.xslt"?>
+<eventos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="Eventos.xsd">
+
+    <evento IDEve="1">
+        <Título>Congreso Tecnológico 2026</Título>
+        <Ubicación>BEC Bilbao</Ubicación>
+        <Descripción>Exposición de las últimas novedades en inteligencia artificial y robótica industrial.</Descripción>
+        <FechaIni>28/01/2026</FechaIni>
+        <FechaFin>30/01/2026</FechaFin>
+        <HoraIni>09:00</HoraIni>
+        <HoraFin>18:30</HoraFin>
+    </evento>
+
+    <evento IDEve="2">
+        <Título>Festival de Jazz al Aire Libre</Título>
+        <Ubicación>Parque de Doña Casilda</Ubicación>
+        <Descripción>Serie de conciertos gratuitos con artistas locales e internacionales.</Descripción>
+        <FechaIni>15/07/2026</FechaIni>
+        <FechaFin>17/07/2026</FechaFin>
+        <HoraIni>19:00</HoraIni>
+        <HoraFin>23:45</HoraFin>
+    </evento>
+
+    <evento IDEve="3">
+        <Título>Networking para Startups</Título>
+        <Ubicación>Palacio Euskalduna</Ubicación>
+        <Descripción>Encuentro entre emprendedores e inversores para fomentar nuevas empresas.</Descripción>
+        <FechaIni>10/03/2026</FechaIni>
+        <FechaFin>10/03/2026</FechaFin>
+        <HoraIni>10:00</HoraIni>
+        <HoraFin>14:00</HoraFin>
+    </evento>
+
+    <evento IDEve="4">
+        <Título>Maratón Nocturna</Título>
+        <Ubicación>Museo Guggenheim (Salida)</Ubicación>
+        <Descripción>Carrera popular de 10km y 42km recorriendo la ría bajo las luces de la ciudad.</Descripción>
+        <FechaIni>24/10/2026</FechaIni>
+        <FechaFin>24/10/2026</FechaFin>
+        <HoraIni>20:30</HoraIni>
+        <HoraFin>23:59</HoraFin>
+    </evento>
+
+    <evento IDEve="5">
+        <Título>Taller de Cocina Vasca</Título>
+        <Ubicación>Mercado de la Ribera</Ubicación>
+        <Descripción>Clase magistral de cocina tradicional utilizando productos locales de temporada.</Descripción>
+        <FechaIni>05/05/2026</FechaIni>
+        <FechaFin>06/05/2026</FechaFin>
+        <HoraIni>16:00</HoraIni>
+        <HoraFin>20:00</HoraFin>
+    </evento>
+</eventos>
