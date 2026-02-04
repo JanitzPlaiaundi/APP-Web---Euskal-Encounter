@@ -23,7 +23,6 @@ let arrayFiltrado = eventos
 filtro.addEventListener("change", () => {
   if(filtro.value == "1"){
         arrayFiltrado = eventos.sort((a,b) => a.nombre.localeCompare(b.nombre))
-        console.log(arrayFiltrado)
     }else if(filtro.value == "2"){
         arrayFiltrado = eventos.sort((a,b) => b.nombre.localeCompare(a.nombre))
     }else if(filtro.value == "3"){
