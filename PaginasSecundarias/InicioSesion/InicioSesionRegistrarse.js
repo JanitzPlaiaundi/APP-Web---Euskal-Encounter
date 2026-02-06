@@ -1,159 +1,168 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ========================
-    // ADMINISTRADORES (BBDD)
-    // ========================
     const adminUsers = [
-        {
-            nombre: "Aaron",
-            email: "ikdbq@plaiaundi.net",
-            password: "Aaron-070506",
-            role: "admin"
-        },
-        {
-            nombre: "Abel",
-            email: "ikear@plaiaundi.net",
-            password: "123456789",
-            role: "admin"
-        },
-        {
-            nombre: "Janitz",
-            email: "ikdbs@plaiaundi.net",
-            password: "123456789",
-            role: "admin"
-        }
+        { nombre: "Aaron", email: "ikdbq@plaiaundi.net", password: "Aaron-070506", role: "admin" },
+        { nombre: "Abel", email: "ikear@plaiaundi.net", password: "123456789", role: "admin" },
+        { nombre: "Janitz", email: "ikdbs@plaiaundi.net", password: "123456789", role: "admin" }
     ];
 
-    // ========================
-    // UTILIDADES USUARIOS NORMALES
-    // ========================
     const getUsers = () => JSON.parse(localStorage.getItem("users")) || [];
     const saveUsers = (users) => localStorage.setItem("users", JSON.stringify(users));
     const setSession = (user) => localStorage.setItem("currentUser", JSON.stringify(user));
 
-    // FORMULARIOS
     const loginForm = document.querySelector("#login form");
     const registerForm = document.querySelector("#register form");
 
-    // ========================
-    // REGISTRO (SOLO USUARIOS NORMALES)
-    // ========================
+    const loginTabBtn = document.querySelector("#login-tab");
+    const registerTabBtn = document.querySelector("#register-tab");
+
+    const alerta = document.getElementById("alerta");
+    const alertaTexto = document.querySelector(".alertText");
+
+    function mostrarAlerta(mensaje) {
+        alertaTexto.textContent = mensaje;
+        alerta.classList.add("activa");
+    }
+
+    function ocultarAlerta() {
+        alerta.classList.remove("activa");
+    }
+
+    function showTab(tabBtn) {
+        const tab = new bootstrap.Tab(tabBtn);
+        tab.show();
+    }
+
+    function activateTab() {
+        const hash = window.location.hash;
+        const lastTab = localStorage.getItem("activeTab");
+
+        if (hash === "#register") {
+            showTab(registerTabBtn);
+        } else if (hash === "#login") {
+            showTab(loginTabBtn);
+        } else if (lastTab === "register") {
+            showTab(registerTabBtn);
+        } else {
+            showTab(loginTabBtn);
+        }
+    }
+
+    if (window.location.hash === "#login" || window.location.hash === "#register") {
+        localStorage.removeItem("activeTab");
+    }
+
+    activateTab();
+
+    window.addEventListener("hashchange", activateTab);
+
+    loginTabBtn.addEventListener("click", () => {
+        localStorage.setItem("activeTab", "login");
+        history.replaceState(null, null, "#login");
+    });
+
+    registerTabBtn.addEventListener("click", () => {
+        localStorage.setItem("activeTab", "register");
+        history.replaceState(null, null, "#register");
+    });
+
     registerForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        ocultarAlerta();
 
         const nombre = registerForm.querySelector("input[type='text']").value.trim();
         const email = registerForm.querySelector("input[type='email']").value.trim();
-        const password = registerForm.querySelectorAll("input[type='password']")[0].value;
-        const password2 = registerForm.querySelectorAll("input[type='password']")[1].value;
+        const passwords = registerForm.querySelectorAll("input[type='password']");
+        const password = passwords[0].value;
+        const password2 = passwords[1].value;
 
-        if (!nombre || !email || !password || !password2) {
-            alert("Completa todos los campos");
+        if (!nombre) {
+            mostrarAlerta("El nombre es obligatorio");
             return;
         }
 
-        // VALIDAR EMAIL
+        if (!email) {
+            mostrarAlerta("El correo electrónico es obligatorio");
+            return;
+        }
+
         const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|es|org|edu|gov|info)$/i;
         if (!emailRegex.test(email)) {
-            alert("Correo inválido");
+            mostrarAlerta("El formato del correo no es válido");
             return;
         }
 
-        // VALIDAR CONTRASEÑA
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/;
-        if (!passwordRegex.test(password)) {
-            alert(
-                "La contraseña debe tener:\n" +
-                "- 6 caracteres mínimo\n" +
-                "- Una mayúscula\n" +
-                "- Una minúscula\n" +
-                "- Un número\n" +
-                "- Un carácter especial"
-            );
+        if (!password) {
+            mostrarAlerta("La contraseña es obligatoria");
             return;
+        }
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/; 
+        
+        if (!passwordRegex.test(password)) { 
+            mostrarAlerta( "La contraseña debe tener: 6 caracteres mínimo, Una mayúscula, Una minúscula, Un número, Un carácter especial" ); 
+            return; 
         }
 
         if (password !== password2) {
-            alert("Las contraseñas no coinciden");
+            mostrarAlerta("Las contraseñas no coinciden");
             return;
         }
 
-        // COMPROBAR QUE NO SEA ADMIN
-        const isAdminEmail = adminUsers.some(a => a.email === email);
-        if (isAdminEmail) {
-            alert("Este correo está reservado para administradores");
+        if (adminUsers.some(a => a.email === email)) {
+            mostrarAlerta("Este correo está reservado para administradores");
             return;
         }
 
         const users = getUsers();
 
-        const nameExists = users.some(
-            u => u.nombre.toLowerCase() === nombre.toLowerCase()
-        );
-
-        if (nameExists) {
-            alert("Ese nombre ya existe");
+        if (users.some(u => u.email === email)) {
+            mostrarAlerta("Ya existe una cuenta con ese correo");
             return;
         }
 
-        const newUser = {
-            nombre,
-            email,
-            password,
-            role: "user"
-        };
+        if (users.some(u => u.nombre.toLowerCase() === nombre.toLowerCase())) {
+            mostrarAlerta("Ese nombre ya existe");
+            return;
+        }
 
+        const newUser = { nombre, email, password, role: "user" };
         users.push(newUser);
         saveUsers(users);
         setSession(newUser);
 
-        alert("Registro exitoso");
         window.location.href = "../../index.html";
     });
 
-    // ========================
-    // LOGIN (ADMIN + USUARIOS)
-    // ========================
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        ocultarAlerta();
 
         const email = loginForm.querySelector("input[type='email']").value.trim();
         const password = loginForm.querySelector("input[type='password']").value;
 
-        // 🔹 COMPROBAR ADMINISTRADORES
-        const admin = adminUsers.find(
-            a => a.email === email && a.password === password
-        );
+        if (!email || !password) {
+            mostrarAlerta("Completa todos los campos");
+            return;
+        }
 
+        const admin = adminUsers.find(a => a.email === email && a.password === password);
         if (admin) {
             setSession(admin);
-            alert("Bienvenido administrador " + admin.nombre);
             window.location.href = "../Administrador/Administrador.html";
             return;
         }
 
-        // 🔹 COMPROBAR USUARIOS NORMALES
         const users = getUsers();
-        const user = users.find(
-            u => u.email === email && u.password === password
-        );
+        const user = users.find(u => u.email === email && u.password === password);
 
         if (!user) {
-            alert("Correo o contraseña incorrectos");
+            mostrarAlerta("Correo o contraseña incorrectos");
             return;
         }
 
         setSession(user);
-        alert("Bienvenido " + user.nombre);
         window.location.href = "../../index.html";
     });
 
-    // ========================
-    // ABRIR TAB REGISTER SI VIENE CON HASH
-    // ========================
-    if (window.location.hash === "#register") {
-        const registerTab = new bootstrap.Tab(
-            document.querySelector("#register-tab")
-        );
-        registerTab.show();
-    }
 });
