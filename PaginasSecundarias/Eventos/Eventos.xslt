@@ -53,23 +53,12 @@
                     </section>
                 </header>
                 <main class="eventosMain">
-                    <section class="zonaFiltros">
-                        <select name="Filtro" id="filtro">
-                            <option value="1">Alfabéticamente ascendente</option>
-                            <option value="2">Alfabéticamente descendente</option>
-                            <option value="3">Fecha ascendiente</option>
-                            <option value="4">Fecha descendiente</option>
-                        </select>
-                        <h2>Filtra los eventos</h2>
-                    </section>
                     <section id="zonaTarjetas">
                         <main class="mainTarjetas">
                             <xsl:for-each select="eventos/evento">
                                 <article class="tarjeta">
-                                    <div class="divImagen">
-                                        <xsl:attribute name="style">
-                                            <xsl:text>background-image: url(../../Recursos/Imagenes/evento_default.jpg);</xsl:text>
-                                        </xsl:attribute>
+                                    <div class="divImagen" style="background-image: url('Imagenes/{Imagen}')">
+                                        
 
                                         <h2 class="nombreEvento">
                                             <xsl:value-of select="Título" />

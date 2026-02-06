@@ -39,6 +39,8 @@
 
                             <xs:element name="HoraFin" type="tipoHora"/>
 
+                            <xs:element name="Imagen" type="xs:string"></xs:element>
+                            
                         </xs:sequence>
 
                         <xs:attribute name="IDEve" type="xs:integer" use="required"/>
