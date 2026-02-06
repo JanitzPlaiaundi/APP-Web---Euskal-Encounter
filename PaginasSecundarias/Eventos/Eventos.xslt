@@ -21,7 +21,7 @@
                 <header>
                     <nav id="menuMovil">
                         <a href="../../index.html">Inicio</a>
-                        <a href="../Eventos/Eventos.html">Eventos</a>
+                        <a href="../Eventos/Eventos.xml">Eventos</a>
                         <a href="../Participantes/participantes.html">Participantes</a>
                         <a href="../Calendario/Calendario.html">Calendario</a>
                         <a href="../Inscripción/Inscripción.html">Inscripción</a>
