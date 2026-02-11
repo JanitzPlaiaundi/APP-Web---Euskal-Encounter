@@ -1,11 +1,6 @@
 <?php
-
-    //Generamos la conexion
-    $conexion = new mysqli("db", "root", "1DAW3_BBDD", "EUSKALENCOUNTER");
-
-    if ($conexion->connect_error) {
-        die("Error de conexión a la base de datos");
-    }
+    // 1. IMPORTAR LA CONEXIÓN  
+    require_once "../../conexion.php";
 
     // 2. CONSULTA: Seleccionamos tus eventos
     $resultado = $conexion->query("SELECT * FROM EVENTO");
@@ -42,3 +37,5 @@
 
     // Esto imprime el HTML final con tus imágenes y estilos
     echo $proc->transformToXML($dom);
+    $conexion->close();
+?>
