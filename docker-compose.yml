@@ -12,5 +12,8 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: 1DAW3_BBDD
+      MYSQL_DATABASE: EUSKALENCOUNTER
     ports:
       - "3307:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
