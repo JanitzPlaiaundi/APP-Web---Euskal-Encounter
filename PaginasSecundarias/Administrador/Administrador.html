@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .centrarContenido{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        h1{
+            font-size: 3vw;
+        }
+        .botonesAdmin{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+    </style>
 </head>
 <body>
-    hola administrador
+    <div class="centrarContenido">
+        <h1>Bienvenido al menu de administrador</h1>
+        <div class="botonesAdmin">
+            <a href="Inscripciones/inscripcion.xml"><button>Ver inscripciones</button></a>
+        </div>
+        
+    </div>
+    
+    
 </body>
 </html>
