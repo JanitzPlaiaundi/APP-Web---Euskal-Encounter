@@ -15,5 +15,3 @@ services:
       MYSQL_DATABASE: EUSKALENCOUNTER
     ports:
       - "3307:3306"
-    volumes:
-      - ./db_data:/var/lib/mysql
