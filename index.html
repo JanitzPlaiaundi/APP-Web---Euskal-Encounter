@@ -4,39 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euskal Encounter</title>
-    <link rel="icon" type="image/jpg" href="./Imagenes/Logo.jpg" />
+    <link rel="icon" type="image/jpg" href="./Recursos/Imagenes/Logo.jpg" />
     <link rel="stylesheet" href="landing.css">
     <link rel="stylesheet" href="Recursos/CssConjuntos/header.css">
     <link rel="stylesheet" href="Recursos/CssConjuntos/footer.css">
+    <script src="Recursos/JSConjuntos/userHeader.js" defer></script>
+    <script src="Recursos/JSConjuntos/menuHeader.js" defer></script>
 </head>
 <body>
     <header>
+        <nav id="menuMovil">
+            <a href="index.html">Inicio</a>
+            <a href="PaginasSecundarias/Eventos/Eventos.html">Eventos</a>
+            <a href="PaginasSecundarias/Participantes/participantes.html">Participantes</a>
+            <a href="PaginasSecundarias/Calendario/Calendario.html">Calendario</a>
+            <a href="PaginasSecundarias/Inscripción/Inscripción.html">Inscripción</a>
+            <a href="PaginasSecundarias/Contacto/Contacto.html">Contacto</a>
+        </nav>
         <section class="sectionLogoHeader">
-            <img  src="/Recursos/Imagenes/logoHeader.png" alt="" class="logoHeader">
+            <a href="#"><img  src="/Recursos/Imagenes/logoHeader.png" alt="logoHeader" class="logoHeader"></a>
         </section>
         <nav class="headerEnlaces">
-            <a class="enlacesHeader" href="#">Inicio</a>
+            <a class="enlacesHeader" href="index.html">Inicio</a>
             <a class="enlacesHeader" href="PaginasSecundarias/Eventos/Eventos.html">Eventos</a>
-            <a class="enlacesHeader" href="#">Participantes</a>
-            <a class="enlacesHeader" href="#">Calendario</a>
-            <a class="enlacesHeader" href="#">Inscripción</a>
-            <a class="enlacesHeader" href="#">Contacto</a>
+            <a class="enlacesHeader" href="PaginasSecundarias/Participantes/participantes.html">Participantes</a>
+            <a class="enlacesHeader" href="PaginasSecundarias/Calendario/Calendario.html">Calendario</a>
+            <a class="enlacesHeader" href="PaginasSecundarias/Inscripción/Inscripción.html">Inscripción</a>
+            <a class="enlacesHeader" href="PaginasSecundarias/Contacto/Contacto.html">Contacto</a>
         </nav>
-        <section class="headerBotones">
-            <button class="botonInicioDeSesion botonesRegistro">Iniciar sesion</button>
-            <button class="botonRegistro botonesRegistro">Registrarse</button>
+        <section class="headerBotones" id="headerUser">
+            <a class="botonInicioDeSesion botonesRegistro" id="btnLogin" href="PaginasSecundarias/InicioSesion/InicioSesionRegistrarse.html">Iniciar sesión</a>
+            <a class="botonRegistro botonesRegistro" id="btnRegister" href="PaginasSecundarias/InicioSesion/InicioSesionRegistrarse.html#register">Registrarse</a>
+            <button id="botonMenuMovil">
+                <img id="fotoMenuMoviles" src="Recursos/Imagenes/BOTON_info.png">
+            </button>
         </section>
+
+
     </header>
     <main>
-        <img class="imagenHero" src="/Recursos/Imagenes/fotoHeroSection.jpg" alt="">
-        <div class="centrarBotonesHero">
-            <button class="botonesHero botonInscribeteHero">Inscribete</button>
-            <button class="botonesHero botonEventoHero">Eventos</button>
+        <img class="imagenHero" src="/Recursos/Imagenes/fotoHeroSection.png" alt="imagenHero">
+        <div class="centrarHero">
+            <h1>Bienvenido a Euskal Encounter</h1>
+            <h2>Los mayores eventos informáticos del País Vasco</h2>
+            <div class="centrarBotonesHero">
+                <a class="linkInscribete" href="PaginasSecundarias/Inscripción/Inscripción.html">Inscríbete</a>
+                <a class="linkEventos" href="PaginasSecundarias/Eventos/Eventos.html">Eventos</a>
+                
+            </div>
         </div>
     </main>
     <section class="sectionCalendario">
-        <img class="imagenFondoCalendario" src="Recursos/Imagenes/imagenFondoCalendario.jpg" alt="">
-        <img  class="calendario" src="Recursos/Imagenes/prueba.svg" alt="calendario">
+        <img class="imagenFondoCalendario" src="Recursos/Imagenes/imagenFondoCalendario.jpg" alt="fondo calendario">
+        <img  class="calendario" src="Recursos/Imagenes/calendario.svg" alt="calendario">
     </section>
     <section class="sectionJuegos">
         <img class="fondoBalatro" src="Recursos/Imagenes/fondoBalatro.jpg" alt="fondo de balatro">
@@ -48,23 +68,23 @@
             <section class="sectionJuegosPremios">
                 <section class="premiosTexto">
                     <h2 class="premioOro">Premio 1 - 500€</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque aliquam unde? Corporis nobis odio cum hic, laboriosam labore voluptate pariatur voluptatem, temporibus tenetur aliquam repudiandae ea odit consequuntur possimus.</p>
+                    <p>El Nº1 se llevará 500 € en metálico, además del título de Campeón Oficial y un trofeo conmemorativo. Este premio reconoce no solo la habilidad estratégica, sino también la consistencia y el dominio total del juego a lo largo de todas las rondas.</p>
                 </section>
                 <section class="premiosTexto">
                     <h2 class="premioPlata">Premio 2 - 150€</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque aliquam unde? Corporis nobis odio cum hic, laboriosam labore voluptate pariatur voluptatem, temporibus tenetur aliquam repudiandae ea odit consequuntur possimus.</p>
+                    <p>El segundo clasificado recibirá 150 € y una medalla especial. Este premio se otorga al jugador que haya demostrado un excelente nivel técnico y haya quedado a las puertas del título.</p>
                 </section>
                 <section class="premiosTexto">
                     <h2 class="premioBronce">Premio 3 - 50€</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque aliquam unde? Corporis nobis odio cum hic, laboriosam labore voluptate pariatur voluptatem, temporibus tenetur aliquam repudiandae ea odit consequuntur possimus.</p>
+                    <p>El tercer finalista obtendrá 50 € como reconocimiento a su gran desempeño durante el torneo. Se valorará su capacidad para mantener la competitividad en las fases más exigentes y su deportividad en todo momento.</p>
                 </section>
             </section>
         </div>
     </section>
-    <footer >
+    <footer>
         <div class="textoFooter">
             <h3>Sobre nosotros</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur et assumenda laborum possimus amet quaerat doloribus. Quidem ipsam adipisci laudantium perferendis, id cupiditate repudiandae sint, debitis, harum ut impedit illo!</p>
+            <p>Euskal Encounter reúne cada año a miles de aficionados a la tecnología y los videojuegos para compartir experiencias, competir y disfrutar de la cultura digital.</p>
         </div>
         <div class="divRedes">
             <a class="enlacesFooter" href="https://www.facebook.com/euskalencounter"><img class="logosFooter" src="Recursos/Imagenes/redes/logoFacebook.svg" alt="logo de facebook"></a>
@@ -72,7 +92,7 @@
             <a class="enlacesFooter" href="https://www.instagram.com/euskalencounter/"><img class="logosFooter" src="Recursos/Imagenes/redes/logoInstagram.svg" alt="logo de facebook"></a>
             <a class="enlacesFooter" href="https://www.twitch.tv/euskalencounter"><img class="logosFooter" src="Recursos/Imagenes/redes/logoTwitch.svg" alt="logo de facebook"></a>
         </div>
-        <img class="imagenFooter" src="Recursos/Imagenes/logoHeader.png" alt="">
+        <img class="imagenFooter" src="Recursos/Imagenes/logoHeader.png" alt="imagen footer">
     </footer>
 </body>
 </html>

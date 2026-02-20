@@ -1,0 +1,36 @@
+.footerAbajo{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.divCentroParticipantes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.divCentroParticipantes h1{
+    margin-top: 2%;
+}
+
+.DivTarjetas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    align-items: center;
+    flex:1;
+}
+
+.TarjetaParticipantes{
+    background:#1e1e1e;
+    color:#fff;
+    padding:20px;
+    border-radius:15px;
+    width:250px;
+    aspect-ratio: 1 / 1.2;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+

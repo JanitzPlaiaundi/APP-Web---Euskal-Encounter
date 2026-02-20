@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Bahnschrift';
     src: url('../Fuentes/BAHNSCHRIFT\ 10.TTF') format('truetype');
@@ -7,18 +9,25 @@
     font-family: 'Kanit';
     src: url('../Fuentes/Kanit-SemiBold.ttf') format('truetype');
 }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Kanit, 'Courier New', Courier, monospace;
+    
 }
 
-header{
+header {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     border-bottom: 1px solid black;
+    position: relative;
+    padding: 7px 0;
 }
+
+
 
 .sectionLogoHeader{
     width: 15vw;
@@ -38,12 +47,16 @@ header{
     justify-content: center;
     align-items: center;
     gap: 5%;
-    
 }
 
 .enlacesHeader{
     color: black;
     text-decoration: none;
+}
+
+.enlacesHeader:hover{
+    transform: scale(1.1);
+    transition: 0.1s;
 }
 
 .headerBotones{
@@ -53,21 +66,118 @@ header{
     justify-content: space-evenly;
 }
 
-.botonInicioDeSesion{
+.botonInicioDeSesion {
     background-color: purple;
+    border: 2px solid white;
     color: white;
+    border-radius: 16px;
+    font-weight: bold;
+    font-family: "Bahnschrift";
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 
-.botonRegistro{
-    
-    background-color: white;
+.botonInicioDeSesion:hover {
+    background-color: #f9a146;
+    border: 2px solid purple;
     color: purple;
 }
 
-.botonesRegistro{
-    border: 2px solid black;
+.botonRegistro {
+    background-color: white;
+    border: 2px solid purple;
+    color: purple;
+    border-radius: 16px;
+    font-weight: bold;
+    font-family: "Bahnschrift";
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.botonRegistro:hover {
+    background-color: #f9a146;
+    color: white;
+}
+
+
+.botonInicioDeSesion, .botonRegistro {
     width: 40%;
-    height: 60%;
+    padding: 10px 0;
     border-radius: 10px;
     font-size: medium;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; 
+}
+
+#botonMenuMovil{
+    display: none;
+    z-index: 100;
+}
+
+#menuMovil{
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(39, 39, 39);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    padding: 5%;
+    transition: 1s;
+}
+#menuMovil a{
+    color: rgb(214, 214, 214);
+    text-decoration: none;
+    display: none;
+}
+
+#menuMovil a:hover{
+    color: white;
+    font-size: 1rem;
+}
+
+#fotoMenuMoviles{
+    height: 100%;
+}
+
+
+@media (max-width: 1024px){
+    header{
+        justify-content: space-between;
+    }
+    .headerEnlaces{
+        display: none;
+    }
+    .enlacesHeader{
+        font-size: 0.6rem;
+    }
+    .botonesRegistro{
+        border: 1px solid black;
+        width: 40%;
+        height: 50%;
+        border-radius: 10px;
+        font-size: 0.5rem;
+    }
+    #botonMenuMovil{
+        display: block;
+        width: 20px;
+        aspect-ratio: 1/1;
+        background-color: transparent;
+        border: none;
+    }
+
+    .headerBotones{
+        width: 30vw;
+    }
+    #menuMovil a{
+        display: block;
+    }
 }

@@ -1,53 +1,85 @@
+
 main{
     width: 100vw;
     height: 90vh;
+    display: flex;
+    position: relative;
 }
 
 .imagenHero{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
-.centrarBotonesHero{
-    width: 50vw;
+.centrarHero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+    width: 80vw;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+main h1{
+    color: white;
+    font-size: 5rem;
+}
+
+main h2{
+    color: white;
+    font-size: 3rem;
+}
+
+.centrarBotonesHero{
     display: flex;
     justify-content: center;
     gap: 3%;
+    margin-top: 5vh;
 }
 
-.botonesHero{
+.centrarBotonesHero a{
+    text-align: center;
+    line-height: 7vh;
+    text-decoration: none;
+}
+
+.linkInscribete, .linkEventos {
     width: 15vw;
     height: 7vh;
     border-radius: 16px;
     font-size: 1.5rem;
     font-weight: bold;
     font-family: "Bahnschrift";
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.botonInscribeteHero{
-    color: white;
-    background-color: #1ac2e3;
-    border: 2px solid black;
-}
-
-.botonInscribeteHero:hover{
-    background-color: #f9a146;
-}
-
-.botonEventoHero{
-    color: black;
-    background-color: #0774bb;
+.linkInscribete{
+    background-color: purple;
     border: 2px solid white;
+    color: white;
 }
 
-.botonEventoHero:hover{
+.linkInscribete:hover{
+    background-color: #f9a146;
+    border: 2px solid purple;
+    color: purple;
+}
+
+.linkEventos{
+    background-color: white;
+    border: 2px solid purple;
+    color: purple;
+}
+
+.linkEventos:hover{
     background-color: #f9a146;
     color: white;
 }
@@ -59,6 +91,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .imagenFondoCalendario{
@@ -69,21 +102,22 @@ main{
 }
 
 .calendario{
-    height: 70vh;
+    width: 70vw;
+    height: 80vh;
     position: absolute;
-    top: 155vh;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .sectionJuegos{
+    position: relative;
     width: 100vw;
     height: 100vh;
     margin-top: 10vh;
 }
 
 .fondoBalatro{
-    position: relative;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -91,7 +125,7 @@ main{
 
 .juegosContenido{
     position: absolute;
-    top: 260vh;
+    top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
     height: 60%;
@@ -101,7 +135,6 @@ main{
     background-color: #1a357e93;
     border: 3px solid white;
     border-radius: 20px;
-    
 }
 
 .sectionJuego{
@@ -173,3 +206,60 @@ main{
     0px 0px 2px;
 }
 
+
+
+@media (max-width: 1024px) {
+    main h1{
+        font-size: 2.5rem;
+    }
+
+    main h2{
+        font-size: clamp(1rem, 1.5rem, 2rem);
+    }
+    .centrarBotonesHero a{
+        width: 30vw;
+        height: 7vh;
+        border-radius: 16px;
+        font-size: 1rem;
+    }
+    .sectionCalendario{
+        height: 50vh;
+        margin-top:5vh;
+    }
+
+    .sectionJuegos{
+        height: 50vh;
+        margin-top: 5vh;
+    }
+    .tituloJuego{
+        font-size: 1rem;
+    }
+    .fotoPremios{
+        width: 70%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid gold;
+        box-shadow:0 0 30px yellow;
+    }
+
+    .premiosTexto h2{
+        font-size: 0.8rem;
+    }
+
+    .premiosTexto p{
+        font-size: 0.5rem;
+    }
+
+    .juegosContenido{
+    height: 70%;
+    width: 90%;
+}
+}
+
+@media (max-width: 400px) {
+    .botonRegistro{
+        width: 50vw;
+        height: 5vh;
+        font-size: 5rem;
+    }
+}

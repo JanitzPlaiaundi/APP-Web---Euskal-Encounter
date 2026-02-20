@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.9.0/css/flag-icons.min.css">
+    <link rel="icon" type="image/jpg" href="../../Recursos/Imagenes/Logo.jpg" />
+    <link rel="stylesheet" href="Inscripción.css">
+    <link rel="stylesheet" href="../../Recursos/CssConjuntos/footer.css">
+    <link rel="stylesheet" href="../../Recursos/CssConjuntos/header.css">
+    <script src="Inscripción.js" defer></script>
+    <script src="../../Recursos/JSConjuntos/menuHeader.js" defer></script>
+    <script src="../../Recursos/JSConjuntos/userHeader.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <nav id="menuMovil">
+            <a href="../../index.html">Inicio</a>
+            <a href="../Eventos/Eventos.html">Eventos</a>
+            <a href="../Participantes/participantes.html">Participantes</a>
+            <a href="../Calendario/Calendario.html">Calendario</a>
+            <a href="../Inscripción/Inscripción.html">Inscripción</a>
+            <a href="../Contacto/Contacto.html">Contacto</a>
+        </nav>
+        <section class="sectionLogoHeader">
+            <a href="#"><img  src="/Recursos/Imagenes/logoHeader.png" alt="logoHeader" class="logoHeader"></a>
+        </section>
+        <nav class="headerEnlaces">
+            <a class="enlacesHeader" href="../../index.html">Inicio</a>
+            <a class="enlacesHeader" href="../Eventos/Eventos.html">Eventos</a>
+            <a class="enlacesHeader" href="../Participantes/participantes.html">Participantes</a>
+            <a class="enlacesHeader" href="../Calendario/Calendario.html">Calendario</a>
+            <a class="enlacesHeader" href="#">Inscripción</a>
+            <a class="enlacesHeader" href="../Contacto/Contacto.html">Contacto</a>
+        </nav>
+        <section class="headerBotones" id="headerUser">
+            <a class="botonInicioDeSesion botonesRegistro" id="btnLogin" href="../InicioSesion/InicioSesionRegistrarse.html">Iniciar sesión</a>
+            <a class="botonRegistro botonesRegistro" id="btnRegister" href="../InicioSesion/InicioSesionRegistrarse.html#register">Registrarse</a>
+            <button id="botonMenuMovil">
+                <img id="fotoMenuMoviles" src="../../Recursos/Imagenes/BOTON_info.png">
+            </button>
+        </section>
+    </header>
+    <div class="header">
+        <h1>Inscríbete a algún evento</h1>
+        <p>Nos encantaría verte en algunos de nuestros eventos, anímate e inscribete a algun evento para aprender y divertirte. ¡Hagamos algo increíble juntos y saquemos algunas risas!</p>
+    </div>
+    <div class="contenedor-principal">
+        <form class="formulario">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo *</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="telefono">Número de telefono *</label>
+            <img id="ImagenPais" src="../../Recursos/Imagenes/Flags/es.png" alt="">
+            <select id="Prefijo" onchange={actualizarBandera()}></select>
+            <input type="number" id="telefono" name="telefono" inputmode="numeric" placeholder="123456789" required>
+
+            <label for="evento">Evento *</label>
+            <select name="evento" id="evento">
+<<<<<<< HEAD
+                <option value="0"></option>
+                <option value="1">CSGO</option>
+                <option value="2">Modding</option>
+                <option value="3">Trackmania</option>
+                <option value="4">Setups</option>
+                <option value="5">Mario Kart</option>
+                <option value="6">Mini PCs</option>
+                <option value="7">Typing speed</option>
+                <option value="8">Balatro</option>
+                <option value="9">Just Dance</option>
+                <option value="10">Tetris</option>
+                <option value="11">Tetris</option>
+                <option value="12">Hack It</option>
+                <option value="13">AI Contest</option>
+=======
+                <option value="0">Elige el evento</option>
+                <option value="1">Modding</option>
+                <option value="2">Trackmania</option>
+                <option value="3">Setups</option>
+                <option value="4">Mario Kart</option>
+                <option value="5">Mini PCs</option>
+                <option value="6">Typing Test</option>
+                <option value="7">CSGO</option>
+                <option value="8">Balatro</option>
+                <option value="9">Just Dance</option>
+                <option value="10">Tetris</option>
+                <option value="11">Gymkana</option>
+                <option value="12">Hack it</option>
+                <option value="13">AI contest</option>
+>>>>>>> Janitz
+            </select>
+
+            <label for="Mensaje">Mensaje *</label>
+            <input type="text" id="Mensaje" name="Mensaje">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>
+        <div class="textoFooter">
+            <h3>Sobre nosotros</h3>
+            <p>Euskal Encounter reúne cada año a miles de aficionados a la tecnología y los videojuegos para compartir experiencias, competir y disfrutar de la cultura digital.</p>
+        </div>
+        <div class="divRedes">
+            <a class="enlacesFooter" href="https://www.facebook.com/euskalencounter"><img class="logosFooter" src="../../Recursos/Imagenes/redes/logoFacebook.svg" alt="logo de facebook"></a>
+            <a class="enlacesFooter" href="https://www.youtube.com/user/ekcounter"><img class="logosFooter" src="../../Recursos/Imagenes/redes/logoyoutube.svg" alt="logo de facebook"></a>
+            <a class="enlacesFooter" href="https://www.instagram.com/euskalencounter/"><img class="logosFooter" src="../../Recursos/Imagenes/redes/logoInstagram.svg" alt="logo de facebook"></a>
+            <a class="enlacesFooter" href="https://www.twitch.tv/euskalencounter"><img class="logosFooter" src="../../Recursos/Imagenes/redes/logoTwitch.svg" alt="logo de facebook"></a>
+        </div>
+        <img class="imagenFooter" src="../../Recursos/Imagenes/logoHeader.png" alt="imagen footer">
+    </footer>
+</body>
+</html>

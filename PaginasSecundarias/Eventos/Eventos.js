@@ -1,17 +1,17 @@
 let eventos = [
-    {id:1, nombre: "Casa", img: "Imagenes/casa.jpg", fecha: "2025-10-1" },
-    {id:2, nombre: "Atun", img: "Imagenes/atun.jpg", fecha: "2025-10-3" },
-    {id:3, nombre: "Cine", img: "Imagenes/Cine.jpg", fecha: "2025-10-2" },
-    {id:4, nombre: "Clase", img: "Imagenes/clase.jpg", fecha: "2025-10-4" },
-    {id:5, nombre: "Clase2", img: "Imagenes/clase2.jpg", fecha: "2025-9-2" },
-    {id:6, nombre: "Concierto", img: "Imagenes/concierto.jpg", fecha: "2025-9-20" },
-    {id:7, nombre: "Disco", img: "Imagenes/Disco.jpg", fecha: "2025-10-21" },
-    {id:8, nombre: "Disco2", img: "Imagenes/Disco2.jpg", fecha: "2025-10-12" },
-    {id:9, nombre: "DJ", img: "Imagenes/dj.jpg", fecha: "2025-10-5" },
-    {id:10, nombre: "Korrika", img: "Imagenes/korrika.jpg", fecha: "2025-9-15" },
-    {id:11, nombre: "Manifestación", img: "Imagenes/mani.jpg", fecha: "2025-9-19" },
-    {id:12, nombre: "Orquesta", img: "Imagenes/orquesta.jpg", fecha: "2025-10-23" },
-    {id:13, nombre: "evento13", img: "Imagenes/rosa.jpg", fecha: "2025-10-21" },
+    {id:1, nombre: "CSGO", img: "Imagenes/cs2.png", fecha: "2025-10-1" },
+    {id:2, nombre: "Modding", img: "Imagenes/modding.png", fecha: "2025-10-3" },
+    {id:3, nombre: "Trackmania", img: "Imagenes/trackmania.png", fecha: "2025-10-2" },
+    {id:4, nombre: "Setups", img: "Imagenes/setup.png", fecha: "2025-10-4" },
+    {id:5, nombre: "Mario Kart", img: "Imagenes/marioKart.png", fecha: "2025-9-2" },
+    {id:6, nombre: "Mini PCs", img: "Imagenes/miniPC.png", fecha: "2025-9-20" },
+    {id:7, nombre: "Typing speed", img: "Imagenes/typingSpeed.png", fecha: "2025-10-21" },
+    {id:8, nombre: "Balatro", img: "Imagenes/balatro.png", fecha: "2025-10-12" },
+    {id:9, nombre: "Just Dance", img: "Imagenes/justDance.png", fecha: "2025-10-5" },
+    {id:10, nombre: "Tetris", img: "Imagenes/tetris.png", fecha: "2025-9-15" },
+    {id:11, nombre: "Gymkana", img: "Imagenes/gymkana.png", fecha: "2025-9-19" },
+    {id:12, nombre: "Hack It", img: "Imagenes/hackIt.png", fecha: "2025-10-23" },
+    {id:13, nombre: "AI Contest", img: "Imagenes/AIContest.png", fecha: "2025-10-21" },
 ]
 
 
@@ -23,7 +23,6 @@ let arrayFiltrado = eventos
 filtro.addEventListener("change", () => {
   if(filtro.value == "1"){
         arrayFiltrado = eventos.sort((a,b) => a.nombre.localeCompare(b.nombre))
-        console.log(arrayFiltrado)
     }else if(filtro.value == "2"){
         arrayFiltrado = eventos.sort((a,b) => b.nombre.localeCompare(a.nombre))
     }else if(filtro.value == "3"){
@@ -75,7 +74,7 @@ function paginaEventos(arrayEventos){
 
         let boton = document.createElement("button")
         boton.className = "btnTarjetas"
-        boton.innerText = "Inscribete"
+        boton.innerText = "Inscríbete"
         div.appendChild(boton)
     })
 
