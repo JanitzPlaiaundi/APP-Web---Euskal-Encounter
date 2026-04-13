@@ -4,29 +4,35 @@ body {
     color: #333;
     background: #99999999;
 }
+
 header {
     background-color: #ffffff;
 }
+
 .header {
     background-color:rgb(0,0,0,0.35);
     text-align: center;
     padding: 20px;
     color: rgb(0, 0, 0);
 }
+
 .header p {
     margin: 0;  
 }
+
 .contenedor-principal {
     display: flex;
     justify-content: center;
     margin: 5vh auto;
     padding: 0 20px;
 }
+
 .formulario label {
     display: block;
     font-weight: bold;
     margin: 15px 0 5px;
 }
+
 .formulario input {
     width: 100%;
     padding: 12px 1vh;
@@ -34,6 +40,7 @@ header {
     border-radius: 4px;
     font-size: 1rem;
 }
+
 .formulario input[id="telefono"] {
     width: auto;
     padding: 12px 1vh;
@@ -41,9 +48,11 @@ header {
     border-radius: 4px;
     font-size: 1rem;
 }
+
 .formulario input[type="tel"] {
     width: 10px;
 }
+
 .formulario button {
     display: flex;
     margin-top: 20px;
@@ -55,6 +64,7 @@ header {
     border-radius: 4px;
     cursor: pointer;
 }
+
 form select{
     width: auto;
     padding: 12px 1vh;
@@ -62,9 +72,40 @@ form select{
     border-radius: 4px;
     font-size: 1rem;
 }
+
 .formulario img{
     width: auto;
     height: 30px;
     margin-right: 10px;
     vertical-align: middle;
+}
+
+.alerta-warning {
+    display: none;
+    align-items: center;
+
+    width: fit-content;   
+    min-width: 350px;    
+
+    margin: 0 auto;       
+
+    background-color: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffecb5;
+    border-radius: 6px;
+
+    padding: 12px 30px;   
+}
+
+
+.alerta-warning.activa {
+    display: flex;              
+    margin-bottom: 15px;        
+}
+
+.alerta-icono {
+    width: 1em;
+    height: 1em;
+    fill: #664d03;
+    flex-shrink: 0;
 }

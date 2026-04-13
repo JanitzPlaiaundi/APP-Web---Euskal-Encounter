@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="inscripcion.xslt"?>
+<inscripciones xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="inscripcion.xsd">
+
+    <inscripcion>
+        <nombre>Juan Pérez</nombre>
+        <correo>juan.perez@email.com</correo>
+        <telefono>612345678</telefono>
+        <evento>ConferenciaTecnologia</evento>
+        <mensaje>Me interesa aprender sobre IA.</mensaje>
+    </inscripcion>
+
+    <inscripcion>
+        <nombre>María López</nombre>
+        <correo>maria.lopez@email.com</correo>
+        <telefono>623456789</telefono>
+        <evento>TallerMarketing</evento>
+        <mensaje>¿Habrá certificado?</mensaje>
+    </inscripcion>
+
+    <inscripcion>
+        <nombre>Carlos Gómez</nombre>
+        <correo>carlos.gomez@email.com</correo>
+        <telefono>634567890</telefono>
+        <evento>EventoSolidario</evento>
+        <mensaje>Me gustaría participar como voluntario.</mensaje>
+    </inscripcion>
+
+    <inscripcion>
+        <nombre>Laura Fernández</nombre>
+        <correo>laura.fernandez@email.com</correo>
+        <telefono>645678901</telefono>
+        <evento>ConferenciaTecnologia</evento>
+        <mensaje></mensaje>
+    </inscripcion>
+
+    <inscripcion>
+        <nombre>Pedro Ruiz</nombre>
+        <correo>pedro.ruiz@email.com</correo>
+        <telefono>656789012</telefono>
+        <evento>TallerMarketing</evento>
+        <mensaje>Sería interesante añadir más ejemplos prácticos.</mensaje>
+    </inscripcion>
+
+</inscripciones>

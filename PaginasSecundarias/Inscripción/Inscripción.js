@@ -1,3 +1,59 @@
+const alerta = document.getElementById("alerta");
+const alertaTexto = document.querySelector(".alertText");
+
+function mostrarAlerta(mensaje) {
+    alertaTexto.textContent = mensaje;
+    alerta.classList.add("activa");
+}
+
+function ocultarAlerta() {
+    alerta.classList.remove("activa");
+}
+
+
+const formulario = document.querySelector(".formulario");
+
+formulario.addEventListener("submit", function (e) {
+    e.preventDefault();
+    ocultarAlerta();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const evento = document.getElementById("evento").value;
+    const mensaje = document.getElementById("Mensaje").value.trim();
+
+    if (!nombre || !correo || !telefono || evento === "0" || !mensaje) {
+        mostrarAlerta("Completa todos los campos obligatorios");
+        return;
+    }
+
+    const nombreRegex = /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/;
+    if (!nombreRegex.test(nombre)) {
+        mostrarAlerta("El nombre solo puede contener letras");
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|es|org|edu|gov|info)$/i;
+    if (!emailRegex.test(correo)) {
+        mostrarAlerta("Correo electrónico inválido");
+        return;
+    }
+
+    const telefonoRegex = /^[0-9]{9}$/;
+    if (!telefonoRegex.test(telefono)) {
+        mostrarAlerta("El teléfono debe tener 9 dígitos");
+        return;
+    }
+
+    if (mensaje.length < 10) {
+        mostrarAlerta("El mensaje debe tener al menos 10 caracteres");
+        return;
+    }
+
+    formulario.reset();
+});
+
 const Select=document.getElementById("Prefijo");
 const paises = [
   { numero: "España +34", clase: "../../Recursos/Imagenes/Flags/España.webp" },  // España
@@ -237,8 +293,6 @@ const paises = [
   { numero: "Zambia +260", clase: "../../Recursos/Imagenes/Flags/Zambia.png" }, // Zambia
   { numero: "Zimbabue +263", clase: "../../Recursos/Imagenes/Flags/Zimbabue.png" }  // Zimbabue
 ];
-
-
 
 let pais = paises.map(pref => {
     
