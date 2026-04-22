@@ -1,10 +1,11 @@
 const userInteraction = document.getElementById("user-interaction");
 const displayZone = document.getElementById("display-zone");
+const token = "_VBTouzy-8CeyTxxnZ1fqoal5E2tCsgs";
 
 function colectEventData() {
   userInteraction.innerHTML = "";
   userInteraction.style.overflowY = "auto";
-  userInteraction.style.maxHeight = "250px"; // Te sugiero un poco más de altura por los 9 campos
+  userInteraction.style.maxHeight = "250px";
 
   const colectDataInputs = [
     { text: "Titulo", inputType: "text", id: "ev-titulo" },
@@ -20,26 +21,16 @@ function colectEventData() {
 
   colectDataInputs.forEach((item) => {
     const div = document.createElement("div");
-    div.style.display = "flex";
-    div.style.flexDirection = "column";
-    div.style.marginBottom = "15px";
+    div.className = "divInputEventos";
 
     const text = document.createElement("h2");
     text.innerText = item.text;
-    text.style.fontSize = "1rem";
-    text.style.margin = "0 0 5px 0";
-    text.style.color = "#94a3b8";
+    text.className = "textoInputEventos";
 
     const input = document.createElement("input");
     input.type = item.inputType;
-    input.id = item.id; // Asignamos ID para poder recuperar el valor luego
-
-    // Estilos inline
-    input.style.padding = "10px";
-    input.style.borderRadius = "5px";
-    input.style.border = "1px solid #334155";
-    input.style.backgroundColor = "#0f172a";
-    input.style.color = "white";
+    input.id = item.id;
+    input.className = "inputsEventos";
 
     div.appendChild(text);
     div.appendChild(input);
