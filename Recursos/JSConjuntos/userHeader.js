@@ -1,40 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const session = localStorage.getItem("currentUser");
+    if (!session) return; 
 
-    if (user) {
-        const header = document.getElementById("headerUser");
-        const btnLogin = document.getElementById("btnLogin");
-        const btnRegister = document.getElementById("btnRegister");
+    const user = JSON.parse(session);
+    const contenedor = document.getElementById("headerUser");
+    if (!contenedor) return;
 
-        if (btnLogin) btnLogin.remove();
-        if (btnRegister) btnRegister.remove();
+    const btnMovil = document.getElementById("botonMenuMovil");
+    contenedor.innerHTML = "";
 
-        // CONTENEDOR USUARIO
-        const userDiv = document.createElement("div");
-        userDiv.style.display = "flex";
-        userDiv.style.alignItems = "center";
-        userDiv.style.gap = "10px";
+    const userDiv = document.createElement("div");
+    userDiv.style.cssText = "display: flex; align-items: center; gap: 15px; color: white; margin-right: 15px;";
+    userDiv.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.5rem;">👤</span>
+            <span style="font-weight: bold; color: black; white-space: nowrap;">${user.nombre} ${user.apellido || ''}</span>
+        </div>
+        <button id="btnSignOut" style="background:#dc3545; color:white; border:none; padding:6px 12px; border-radius:5px; cursor:pointer; font-weight:bold;">Sign Out</button>
+    `;
 
-        userDiv.innerHTML = `
-            <span style="font-size:1.4rem;">👤</span>
-            <span>${user.nombre}</span>
-            <button id="logoutBtn" style="
-                background: crimson;
-                color: white;
-                border: none;
-                border-radius: 8px;
-                padding: 5px 10px;
-                cursor: pointer;
-                font-size: 0.8rem;
-            ">Salir</button>
-        `;
+    contenedor.appendChild(userDiv);
+    if (btnMovil) contenedor.appendChild(btnMovil);
 
-        header.insertBefore(userDiv, header.firstChild);
-
-        // LOGOUT
-        document.getElementById("logoutBtn").addEventListener("click", () => {
-            localStorage.removeItem("currentUser"); // 🔑 solo cerramos sesión
-            window.location.reload();
-        });
-    }
+    document.getElementById("btnSignOut").onclick = function() {
+        localStorage.removeItem("currentUser");
+        
+        // ESTO ES LO IMPORTANTE:
+        // En lugar de reload(), forzamos ir al index real usando una ruta que funcione siempre
+        const path = window.location.pathname;
+        if (path.includes("PaginasSecundarias")) {
+            window.location.href = "../../index.html";
+        } else {
+            window.location.href = "index.html";
+        }
+    };
 });

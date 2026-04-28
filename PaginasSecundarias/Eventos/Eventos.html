@@ -8,7 +8,7 @@
     <link rel="icon" type="image/jpg" href="../../Recursos/Imagenes/Logo.jpg" />
     <link rel="stylesheet" href="Eventos.css" />
     <script src="../../Recursos/JSConjuntos/menuHeader.js" defer=""></script>
-    <script src="../../Recursos/JSConjuntos/userHeader.js" defer=""></script>
+    <script src="../../Recursos/JSConjuntos/userHeader.js" defer></script>
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/footer.css" />
     <link rel="stylesheet" href="../../Recursos/CssConjuntos/header.css" />
     <style>
@@ -75,77 +75,34 @@
                 experiencias, competir y disfrutar de la cultura digital.</p>
         </div>
         <div class="divRedes">
-            <a class="enlacesFooter" href="https://www.facebook.com/euskalencounter"><img class="logosFooter"
-                    src="../../Recursos/Imagenes/LogosRedes/logoFacebook.svg" alt="facebook" /></a>
-            <a class="enlacesFooter" href="https://www.youtube.com/user/ekcounter"><img class="logosFooter"
-                    src="../../Recursos/Imagenes/LogosRedes/logoyoutube.svg" alt="youtube" /></a>
-            <a class="enlacesFooter" href="https://www.instagram.com/euskalencounter/"><img class="logosFooter"
-                    src="../../Recursos/Imagenes/LogosRedes/logoInstagram.svg" alt="instagram" /></a>
-            <a class="enlacesFooter" href="https://www.twitch.tv/euskalencounter"><img class="logosFooter"
-                    src="../../Recursos/Imagenes/LogosRedes/logoTwitch.svg" alt="twitch" /></a>
+            <a class="enlacesFooter" href="https://www.facebook.com/euskalencounter"
+            ><img
+                class="logosFooter"
+                src="../../Recursos/Imagenes/LogosRedes/logoFacebook.svg"
+                alt="logo de facebook"
+            /></a>
+            <a class="enlacesFooter" href="https://www.youtube.com/user/ekcounter"
+            ><img
+                class="logosFooter"
+                src="../../Recursos/Imagenes/LogosRedes/logoYoutube.svg"
+                alt="logo de facebook"
+            /></a>
+            <a
+            class="enlacesFooter"
+            href="https://www.instagram.com/euskalencounter/"
+            ><img
+                class="logosFooter"
+                src="../../Recursos/Imagenes/LogosRedes/logoInstagram.svg"
+                alt="logo de facebook"
+            /></a>
+            <a class="enlacesFooter" href="https://www.twitch.tv/euskalencounter"
+            ><img
+                class="logosFooter"
+                src="../../Recursos/Imagenes/LogosRedes/logoTwitch.svg"
+                alt="logo de facebook"
+            /></a>
         </div>
         <img class="imagenFooter" src="../../Recursos/Imagenes/logoHeader.png" alt="logo footer" />
     </footer>
-
-    <script>
-        const token = "WfKmzKcqd2_YtIm00ofib8Um0dhlV1ii";
-        const url = "http://localhost:8055/items/evento";
-
-        // Función utilizando sessionStorage para guardar el valor clave
-        function verDetalle(id) {
-            sessionStorage.setItem('eventoSeleccionadoId', id);
-            window.location.href = 'DetalleEvento.html';
-        }
-
-        async function cargarEventos() {
-            const contenedor = document.getElementById('contenedor-eventos');
-            try {
-                const respuesta = await fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-
-                if (!respuesta.ok) throw new Error("No se pudo conectar con la API");
-
-                const resultado = await respuesta.json();
-                const eventos = resultado.data;
-
-                if (!eventos || eventos.length === 0) {
-                    contenedor.innerHTML = '<p class="status-msg">No hay eventos disponibles.</p>';
-                    return;
-                }
-
-                contenedor.innerHTML = '';
-
-                eventos.forEach(evento => {
-                    const article = document.createElement('article');
-                    article.className = 'tarjeta';
-
-                    const nombreImagen = evento.IMAGEN || 'default.jpg';
-
-                    article.innerHTML = `
-                        <div class="divImagen" style="background-image: url('Imagenes/${nombreImagen}')">
-                            <h2 class="nombreEvento">${evento.TITULO || 'Sin título'}</h2>
-                            <h2 class="fechaEvento">${evento.FECHA_INICIO || ''}</h2>
-                        </div>
-                        <div class="divTarjetas">
-                            <a href="javascript:void(0)" onclick="verDetalle('${evento.ID}')" class="textoTarjetas">Ver mas</a>
-                            <a href="../Inscripción/Inscripción.html" class="btnTarjetas">Inscríbete</a>
-                        </div>
-                    `;
-                    contenedor.appendChild(article);
-                });
-
-            } catch (error) {
-                contenedor.innerHTML = `<p class="status-msg error">Error: ${error.message}</p>`;
-            }
-        }
-
-        window.onload = cargarEventos;
-    </script>
 </body>
-
 </html>

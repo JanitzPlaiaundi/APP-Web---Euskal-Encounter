@@ -2,33 +2,35 @@ body {
     background: url('../../Recursos/Imagenes/fotoHeroSection.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .alerta-warning {
     display: none;
     align-items: center;
-
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
     width: fit-content;   
     min-width: 350px;    
-
-    margin: 0 auto;       
-
     background-color: #fff3cd;
     color: #664d03;
     border: 1px solid #ffecb5;
     border-radius: 6px;
-
-    padding: 12px 30px;   
+    padding: 12px 30px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .alerta-warning.activa {
-    display: flex;              
-    margin-bottom: 15px;        
+    display: flex; 
 }
 
 .alerta-icono {
-    width: 1em;
-    height: 1em;
+    width: 1.2em;
+    height: 1.2em;
     fill: #664d03;
+    margin-right: 10px;
     flex-shrink: 0;
 }

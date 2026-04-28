@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const DIRECTUS_URL = "http://localhost:8055"; 
+    const USUARIOS_ENDPOINT = `${DIRECTUS_URL}/items/USUARIO`;
 
     const adminUsers = [
         { nombre: "Aaron", email: "ikdbq@plaiaundi.net", password: "Aaron-070506", role: "admin" },
@@ -6,163 +8,111 @@ document.addEventListener("DOMContentLoaded", () => {
         { nombre: "Janitz", email: "ikdbs@plaiaundi.net", password: "123456789", role: "admin" }
     ];
 
-    const getUsers = () => JSON.parse(localStorage.getItem("users")) || [];
-    const saveUsers = (users) => localStorage.setItem("users", JSON.stringify(users));
-    const setSession = (user) => localStorage.setItem("currentUser", JSON.stringify(user));
-
-    const loginForm = document.querySelector("#login form");
-    const registerForm = document.querySelector("#register form");
-
-    const loginTabBtn = document.querySelector("#login-tab");
-    const registerTabBtn = document.querySelector("#register-tab");
-
+    const loginForm = document.querySelector("#f-login");
+    const registerForm = document.querySelector("#f-register");
     const alerta = document.getElementById("alerta");
     const alertaTexto = document.querySelector(".alertText");
 
     function mostrarAlerta(mensaje) {
-        alertaTexto.textContent = mensaje;
-        alerta.classList.add("activa");
+        if (alertaTexto && alerta) {
+            alertaTexto.textContent = mensaje;
+            alerta.classList.add("activa");
+        } else {
+            alert(mensaje); // Fallback por si el DOM no está listo
+        }
     }
 
     function ocultarAlerta() {
-        alerta.classList.remove("activa");
+        if (alerta) alerta.classList.remove("activa");
     }
 
-    function showTab(tabBtn) {
-        const tab = new bootstrap.Tab(tabBtn);
-        tab.show();
-    }
-
-    function activateTab() {
-        const hash = window.location.hash;
-        const lastTab = localStorage.getItem("activeTab");
-
-        if (hash === "#register") {
-            showTab(registerTabBtn);
-        } else if (hash === "#login") {
-            showTab(loginTabBtn);
-        } else if (lastTab === "register") {
-            showTab(registerTabBtn);
-        } else {
-            showTab(loginTabBtn);
-        }
-    }
-
-    if (window.location.hash === "#login" || window.location.hash === "#register") {
-        localStorage.removeItem("activeTab");
-    }
-
-    activateTab();
-
-    window.addEventListener("hashchange", activateTab);
-
-    loginTabBtn.addEventListener("click", () => {
-        localStorage.setItem("activeTab", "login");
-        history.replaceState(null, null, "#login");
-    });
-
-    registerTabBtn.addEventListener("click", () => {
-        localStorage.setItem("activeTab", "register");
-        history.replaceState(null, null, "#register");
-    });
-
-    registerForm.addEventListener("submit", (e) => {
+    // --- REGISTRO CORREGIDO ---
+    registerForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         ocultarAlerta();
 
-        const nombre = registerForm.querySelector("input[type='text']").value.trim();
-        const email = registerForm.querySelector("input[type='email']").value.trim();
-        const passwords = registerForm.querySelectorAll("input[type='password']");
-        const password = passwords[0].value;
-        const password2 = passwords[1].value;
+        const nombre = document.getElementById("reg-nom-completo").value.trim();
+        const apellido = document.getElementById("reg-apellido").value.trim();
+        const dni = document.getElementById("reg-dni").value.trim();
+        const email = document.getElementById("reg-email").value.trim();
+        const pass1 = document.getElementById("reg-pass1").value;
+        const pass2 = document.getElementById("reg-pass2").value;
 
-        if (!nombre) {
-            mostrarAlerta("El nombre es obligatorio");
-            return;
-        }
-
-        if (!email) {
-            mostrarAlerta("El correo electrónico es obligatorio");
-            return;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.(com|net|es|org|edu|gov|info)$/i;
-        if (!emailRegex.test(email)) {
-            mostrarAlerta("El formato del correo no es válido");
-            return;
-        }
-
-        if (!password) {
-            mostrarAlerta("La contraseña es obligatoria");
-            return;
-        }
-
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/; 
-        
-        if (!passwordRegex.test(password)) { 
-            mostrarAlerta( "La contraseña debe tener: 6 caracteres mínimo, Una mayúscula, Una minúscula, Un número, Un carácter especial" ); 
-            return; 
-        }
-
-        if (password !== password2) {
+        if (pass1 !== pass2) {
             mostrarAlerta("Las contraseñas no coinciden");
             return;
         }
 
-        if (adminUsers.some(a => a.email === email)) {
-            mostrarAlerta("Este correo está reservado para administradores");
-            return;
+        // Construimos el objeto SIN FECHA_DE_CREACION para evitar el Error 400
+        const datosUsuario = {
+            "NOMBRE": nombre,
+            "APELLIDO": apellido,
+            "DNI": dni,
+            "EMAIL": email,
+            "CONTRASEÑA": pass1,
+            "FECHA_DE_CREACION": new Date().toISOString().split('T')[0] 
+        };
+
+        try {
+            const response = await fetch(USUARIOS_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datosUsuario)
+            });
+
+            if (response.ok) {
+                localStorage.setItem("currentUser", JSON.stringify({ 
+                    nombre: nombre, 
+                    apellido: apellido, 
+                    role: "user" 
+                }));
+                window.location.href = "../../index.html";
+            } else {
+                const result = await response.json();
+                console.error("Error de Directus:", result);
+                mostrarAlerta("Error: Revisa si el Email o DNI ya existen.");
+            }
+        } catch (error) {
+            mostrarAlerta("No se pudo conectar con el servidor.");
         }
-
-        const users = getUsers();
-
-        if (users.some(u => u.email === email)) {
-            mostrarAlerta("Ya existe una cuenta con ese correo");
-            return;
-        }
-
-        if (users.some(u => u.nombre.toLowerCase() === nombre.toLowerCase())) {
-            mostrarAlerta("Ese nombre ya existe");
-            return;
-        }
-
-        const newUser = { nombre, email, password, role: "user" };
-        users.push(newUser);
-        saveUsers(users);
-        setSession(newUser);
-
-        window.location.href = "../../index.html";
     });
 
-    loginForm.addEventListener("submit", (e) => {
+    // --- LOGIN CORREGIDO ---
+    loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         ocultarAlerta();
 
-        const email = loginForm.querySelector("input[type='email']").value.trim();
-        const password = loginForm.querySelector("input[type='password']").value;
+        const email = document.getElementById("log-email").value.trim();
+        const pass = document.getElementById("log-pass").value;
 
-        if (!email || !password) {
-            mostrarAlerta("Completa todos los campos");
-            return;
-        }
-
-        const admin = adminUsers.find(a => a.email === email && a.password === password);
+        // 1. Check Admins
+        const admin = adminUsers.find(a => a.email === email && a.password === pass);
         if (admin) {
-            setSession(admin);
+            localStorage.setItem("currentUser", JSON.stringify({ nombre: admin.nombre, role: "admin" }));
             window.location.href = "../Administrador/Administrador.html";
             return;
         }
 
-        const users = getUsers();
-        const user = users.find(u => u.email === email && u.password === password);
+        // 2. Check DB
+        try {
+            // Usamos encodeURIComponent para que caracteres raros no rompan la URL
+            const query = `${USUARIOS_ENDPOINT}?filter[EMAIL][_eq]=${encodeURIComponent(email)}&filter[CONTRASEÑA][_eq]=${encodeURIComponent(pass)}`;
+            const response = await fetch(query);
+            const result = await response.json();
 
-        if (!user) {
-            mostrarAlerta("Correo o contraseña incorrectos");
-            return;
+            if (result.data && result.data.length > 0) {
+                const user = result.data[0];
+                localStorage.setItem("currentUser", JSON.stringify({ 
+                    nombre: user.NOMBRE, 
+                    apellido: user.APELLIDO, 
+                    role: "user" 
+                }));
+                window.location.href = "../../index.html";
+            } else {
+                mostrarAlerta("Email o contraseña incorrectos");
+            }
+        } catch (error) {
+            mostrarAlerta("Error al conectar con el servidor");
         }
-
-        setSession(user);
-        window.location.href = "../../index.html";
     });
-
 });

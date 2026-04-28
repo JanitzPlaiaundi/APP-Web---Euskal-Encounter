@@ -10,12 +10,18 @@ function ocultarAlerta() {
     alerta.classList.remove("activa");
 }
 
-
 const formulario = document.querySelector(".formulario");
 
-formulario.addEventListener("submit", function (e) {
+formulario.addEventListener("submit", async function (e) {
     e.preventDefault();
     ocultarAlerta();
+
+    const dniUsuario = localStorage.getItem("dni_usuario"); 
+
+    if (!dniUsuario) {
+        mostrarAlerta("Debes iniciar sesión para inscribirte en un evento");
+        return;
+    }
 
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
@@ -51,8 +57,47 @@ formulario.addEventListener("submit", function (e) {
         return;
     }
 
-    formulario.reset();
+    await insertarDatos({
+         // Revisa si en Directus es MENSAGE o MENSAJE
+    });
 });
+
+async function insertarDatos(datosParaEnviar) {
+    const Inserturl = "http://localhost:8055/items/INSCRIPCION";   
+    const token = "SfxbjTOT9cLvBPcej5r8-ZJ6XPUfa0fL"; 
+
+    try {
+        const res = await fetch(Inserturl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                "DNI":  localStorage.getItem("dni_usuario"),
+                "NOMBRE": datosParaEnviar.nombre,
+                "CORREO": datosParaEnviar.correo,
+                "TELEFONO": parseInt(datosParaEnviar.telefono), 
+                "EVENTO": datosParaEnviar.evento,
+                "MENSAGE": datosParaEnviar.mensaje,
+                "FECHA_DE_CREACION": new Date().toISOString().split('T')[0]
+            })
+        });
+
+        if (!res.ok) {
+            const mensajeError = await res.json();
+            throw new Error(mensajeError.errors[0].message);
+        }
+
+        // Éxito
+        alert("¡Inscripción completada con éxito!");
+        formulario.reset();
+        actualizarBandera();
+
+    } catch (error) {
+        mostrarAlerta("Error en la base de datos: " + error.message);
+    }
+}
 
 const Select=document.getElementById("Prefijo");
 const paises = [
