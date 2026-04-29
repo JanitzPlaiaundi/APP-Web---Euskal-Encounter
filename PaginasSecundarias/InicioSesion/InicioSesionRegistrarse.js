@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alertaTexto.textContent = mensaje;
             alerta.classList.add("activa");
         } else {
-            alert(mensaje); // Fallback por si el DOM no está listo
+            alert(mensaje); 
         }
     }
 
@@ -43,14 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Construimos el objeto SIN FECHA_DE_CREACION para evitar el Error 400
         const datosUsuario = {
             "NOMBRE": nombre,
             "APELLIDO": apellido,
             "DNI": dni,
             "EMAIL": email,
             "CONTRASEÑA": pass1,
-            "FECHA_DE_CREACION": new Date().toISOString().split('T')[0] 
+            "FECHA_DE_CREACION": new Date().toISOString().split('T')[0],
+            "FECHA_DE_REGISTRO": new Date().toISOString().split('T')[0] 
         };
 
         try {
@@ -77,7 +77,36 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- LOGIN CORREGIDO ---
+    // --- LOGIN CON ACTUALIZACIÓN DE FECHA ---
+    // Función para actualizar la fecha buscando por EMAIL
+    async function actualizarFechaPorEmail(email) {
+        const hoy = new Date().toISOString().split('T')[0];
+
+        try {
+            // PASO 1: Buscamos el DNI del usuario usando el correo
+            const busqueda = await fetch(`${USUARIOS_ENDPOINT}?filter[EMAIL][_eq]=${encodeURIComponent(email)}`);
+            const resultado = await busqueda.json();
+
+            if (resultado.data && resultado.data.length > 0) {
+                const dni = resultado.data[0].DNI;
+
+                // PASO 2: Actualizamos la fecha usando el DNI en la URL
+                const response = await fetch(`${USUARIOS_ENDPOINT}/${dni}`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ "FECHA_DE_REGISTRO": hoy })
+                });
+
+                if (response.ok) {
+                } else {
+                    console.error("❌ Error en el PATCH. Revisa permisos UPDATE en Directus.");
+                }
+            }
+        } catch (error) {
+            console.error("❌ Error de conexión al actualizar:", error);
+        }
+    }
+
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         ocultarAlerta();
@@ -85,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = document.getElementById("log-email").value.trim();
         const pass = document.getElementById("log-pass").value;
 
-        // 1. Check Admins
+        // 1. Verificación de Admins
         const admin = adminUsers.find(a => a.email === email && a.password === pass);
         if (admin) {
             localStorage.setItem("currentUser", JSON.stringify({ nombre: admin.nombre, role: "admin" }));
@@ -93,20 +122,25 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // 2. Check DB
+        // 2. Verificación de Usuario
         try {
-            // Usamos encodeURIComponent para que caracteres raros no rompan la URL
             const query = `${USUARIOS_ENDPOINT}?filter[EMAIL][_eq]=${encodeURIComponent(email)}&filter[CONTRASEÑA][_eq]=${encodeURIComponent(pass)}`;
             const response = await fetch(query);
             const result = await response.json();
 
             if (result.data && result.data.length > 0) {
-                const user = result.data[0];
+                const usuario = result.data[0];
+
+                // LLAMADA A LA ACTUALIZACIÓN
+                await actualizarFechaPorEmail(email);
+
+                // Guardar sesión y entrar
                 localStorage.setItem("currentUser", JSON.stringify({ 
-                    nombre: user.NOMBRE, 
-                    apellido: user.APELLIDO, 
+                    nombre: usuario.NOMBRE, 
+                    apellido: usuario.APELLIDO, 
                     role: "user" 
                 }));
+                
                 window.location.href = "../../index.html";
             } else {
                 mostrarAlerta("Email o contraseña incorrectos");

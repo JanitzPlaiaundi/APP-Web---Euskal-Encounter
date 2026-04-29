@@ -1,5 +1,6 @@
 const alerta = document.getElementById("alerta");
 const alertaTexto = document.querySelector(".alertText");
+const formulario = document.querySelector(".formulario");
 
 function mostrarAlerta(mensaje) {
     alertaTexto.textContent = mensaje;
@@ -10,25 +11,29 @@ function ocultarAlerta() {
     alerta.classList.remove("activa");
 }
 
-const formulario = document.querySelector(".formulario");
-
 formulario.addEventListener("submit", async function (e) {
     e.preventDefault();
     ocultarAlerta();
 
-    const dniUsuario = localStorage.getItem("dni_usuario"); 
+    // 1. Detectar si el usuario ha iniciado sesión
+    const sesion = localStorage.getItem("currentUser"); 
 
-    if (!dniUsuario) {
-        mostrarAlerta("Debes iniciar sesión para inscribirte en un evento");
+    if (!sesion) {
+        mostrarAlerta("No se ha iniciado sesión. Debes identificarte para inscribirte.");
         return;
     }
 
+    // Convertimos el texto de la sesión a un objeto JS por si necesitas datos extra (como el nombre)
+    const usuarioActivo = JSON.parse(sesion);
+
+    // 2. Captura de datos del formulario
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
     const telefono = document.getElementById("telefono").value.trim();
     const evento = document.getElementById("evento").value;
     const mensaje = document.getElementById("Mensaje").value.trim();
 
+    // 3. Validaciones
     if (!nombre || !correo || !telefono || evento === "0" || !mensaje) {
         mostrarAlerta("Completa todos los campos obligatorios");
         return;
@@ -57,8 +62,13 @@ formulario.addEventListener("submit", async function (e) {
         return;
     }
 
+    // 4. Envío de datos
     await insertarDatos({
-         // Revisa si en Directus es MENSAGE o MENSAJE
+        nombre: nombre,
+        correo: correo,
+        telefono: telefono,
+        evento: evento,
+        mensaje: mensaje
     });
 });
 
@@ -74,27 +84,32 @@ async function insertarDatos(datosParaEnviar) {
                 "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
-                "DNI":  localStorage.getItem("dni_usuario"),
                 "NOMBRE": datosParaEnviar.nombre,
                 "CORREO": datosParaEnviar.correo,
                 "TELEFONO": parseInt(datosParaEnviar.telefono), 
                 "EVENTO": datosParaEnviar.evento,
-                "MENSAGE": datosParaEnviar.mensaje,
+                "MENSAGE": datosParaEnviar.mensaje, // Asegúrate que en Directus sea MENSAGE y no MENSAJE
                 "FECHA_DE_CREACION": new Date().toISOString().split('T')[0]
             })
         });
 
         if (!res.ok) {
-            const mensajeError = await res.json();
-            throw new Error(mensajeError.errors[0].message);
+            const errorJson = await res.json();
+            // Intentamos obtener el mensaje de error específico de Directus
+            const msg = errorJson.errors ? errorJson.errors[0].message : "Error desconocido";
+            throw new Error(msg);
         }
 
         // Éxito
-        alert("¡Inscripción completada con éxito!");
         formulario.reset();
-        actualizarBandera();
+        
+        // Si tienes una función para actualizar la UI, llámala aquí
+        if (typeof actualizarBandera === "function") {
+            actualizarBandera();
+        }
 
     } catch (error) {
+        console.error("Error detallado:", error);
         mostrarAlerta("Error en la base de datos: " + error.message);
     }
 }
