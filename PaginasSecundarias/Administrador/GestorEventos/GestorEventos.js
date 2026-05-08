@@ -1,6 +1,6 @@
 const userInteraction = document.getElementById("user-interaction");
 const displayZone = document.getElementById("display-zone");
-const token = "_VBTouzy-8CeyTxxnZ1fqoal5E2tCsgs";
+const token = "SfxbjTOT9cLvBPcej5r8-ZJ6XPUfa0fL";
 
 function colectEventData() {
   userInteraction.innerHTML = "";

@@ -1,5 +1,5 @@
 const contenedorEventos = document.getElementById("contenedor-eventos");
-const token = "3CdCEuen9f1RrVrNWGhGQ90qyayo-F_H";
+const token = "SfxbjTOT9cLvBPcej5r8-ZJ6XPUfa0fL";
 
 async function readEvents() {
   contenedorEventos.innerHTML = "";
